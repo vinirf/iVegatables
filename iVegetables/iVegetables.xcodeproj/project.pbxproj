@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326318FEF787008B5D73 /* BarraViewController.m */; };
+		0B3D326718FEF905008B5D73 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326618FEF905008B5D73 /* FeedViewController.m */; };
+		0B3D326A18FEFB77008B5D73 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326918FEFB77008B5D73 /* ContainerViewController.m */; };
+		0B3D326D18FEFF00008B5D73 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326C18FEFF00008B5D73 /* EmptySegue.m */; };
+		0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326F18FF06E4008B5D73 /* KitchenViewController.m */; };
+		0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */; };
+		0B564DE918FDB47100A59821 /* DateBaseCoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */; };
+		3FAB7E8618FCEA05001F0290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8518FCEA05001F0290 /* Foundation.framework */; };
+		3FAB7E8818FCEA05001F0290 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */; };
+		3FAB7E8A18FCEA05001F0290 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8918FCEA05001F0290 /* UIKit.framework */; };
+		3FAB7E9018FCEA05001F0290 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB7E8E18FCEA05001F0290 /* InfoPlist.strings */; };
+		3FAB7E9218FCEA05001F0290 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB7E9118FCEA05001F0290 /* main.m */; };
+		3FAB7E9618FCEA05001F0290 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB7E9518FCEA05001F0290 /* AppDelegate.m */; };
+		3FAB7E9918FCEA05001F0290 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB7E9718FCEA05001F0290 /* Main.storyboard */; };
+		3FAB7E9C18FCEA05001F0290 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB7E9B18FCEA05001F0290 /* ViewController.m */; };
+		3FAB7E9E18FCEA05001F0290 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB7E9D18FCEA05001F0290 /* Images.xcassets */; };
+		3FAB7EA518FCEA05001F0290 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7EA418FCEA05001F0290 /* XCTest.framework */; };
+		3FAB7EA618FCEA05001F0290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8518FCEA05001F0290 /* Foundation.framework */; };
+		3FAB7EA718FCEA05001F0290 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8918FCEA05001F0290 /* UIKit.framework */; };
+		3FAB7EAF18FCEA05001F0290 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB7EAD18FCEA05001F0290 /* InfoPlist.strings */; };
+		3FAB7EB118FCEA05001F0290 /* iVegetablesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB7EB018FCEA05001F0290 /* iVegetablesTests.m */; };
+		3FAB7EBB18FCEBBF001F0290 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */; };
+		3FB7B23818FE54B600468BAB /* routes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB7B23718FE54B600468BAB /* routes.png */; };
+		3FB7B23A18FE60E300468BAB /* GreenPin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FB7B23918FE60E300468BAB /* GreenPin.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3FAB7EA818FCEA05001F0290 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FAB7E7A18FCEA05001F0290 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FAB7E8118FCEA05001F0290;
+			remoteInfo = iVegetables;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B3D326218FEF787008B5D73 /* BarraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarraViewController.h; path = ../BarraViewController.h; sourceTree = "<group>"; };
+		0B3D326318FEF787008B5D73 /* BarraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarraViewController.m; path = ../BarraViewController.m; sourceTree = "<group>"; };
+		0B3D326518FEF905008B5D73 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		0B3D326618FEF905008B5D73 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		0B3D326818FEFB77008B5D73 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerViewController.h; path = ../ContainerViewController.h; sourceTree = "<group>"; };
+		0B3D326918FEFB77008B5D73 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerViewController.m; path = ../ContainerViewController.m; sourceTree = "<group>"; };
+		0B3D326B18FEFF00008B5D73 /* EmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptySegue.h; path = ../EmptySegue.h; sourceTree = "<group>"; };
+		0B3D326C18FEFF00008B5D73 /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptySegue.m; path = ../EmptySegue.m; sourceTree = "<group>"; };
+		0B3D326E18FF06E4008B5D73 /* KitchenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitchenViewController.h; sourceTree = "<group>"; };
+		0B3D326F18FF06E4008B5D73 /* KitchenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KitchenViewController.m; sourceTree = "<group>"; };
+		0B564DE418FDB46000A59821 /* CoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordenadaVegetariano.h; sourceTree = "<group>"; };
+		0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordenadaVegetariano.m; sourceTree = "<group>"; };
+		0B564DE718FDB47100A59821 /* DateBaseCoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateBaseCoordenadaVegetariano.h; sourceTree = "<group>"; };
+		0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateBaseCoordenadaVegetariano.m; sourceTree = "<group>"; };
+		3FAB7E8218FCEA05001F0290 /* iVegetables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVegetables.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FAB7E8518FCEA05001F0290 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3FAB7E8918FCEA05001F0290 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3FAB7E8D18FCEA05001F0290 /* iVegetables-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iVegetables-Info.plist"; sourceTree = "<group>"; };
+		3FAB7E8F18FCEA05001F0290 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FAB7E9118FCEA05001F0290 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FAB7E9318FCEA05001F0290 /* iVegetables-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iVegetables-Prefix.pch"; sourceTree = "<group>"; };
+		3FAB7E9418FCEA05001F0290 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3FAB7E9518FCEA05001F0290 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3FAB7E9818FCEA05001F0290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FAB7E9A18FCEA05001F0290 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = iVegetables/ViewController.h; sourceTree = "<group>"; };
+		3FAB7E9B18FCEA05001F0290 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = iVegetables/ViewController.m; sourceTree = "<group>"; };
+		3FAB7E9D18FCEA05001F0290 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3FAB7EA318FCEA05001F0290 /* iVegetablesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iVegetablesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FAB7EA418FCEA05001F0290 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3FAB7EAC18FCEA05001F0290 /* iVegetablesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iVegetablesTests-Info.plist"; sourceTree = "<group>"; };
+		3FAB7EAE18FCEA05001F0290 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FAB7EB018FCEA05001F0290 /* iVegetablesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iVegetablesTests.m; sourceTree = "<group>"; };
+		3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3FB7B23718FE54B600468BAB /* routes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = routes.png; sourceTree = "<group>"; };
+		3FB7B23918FE60E300468BAB /* GreenPin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GreenPin.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FAB7E7F18FCEA05001F0290 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FAB7EBB18FCEBBF001F0290 /* MapKit.framework in Frameworks */,
+				3FAB7E8818FCEA05001F0290 /* CoreGraphics.framework in Frameworks */,
+				3FAB7E8A18FCEA05001F0290 /* UIKit.framework in Frameworks */,
+				3FAB7E8618FCEA05001F0290 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FAB7EA018FCEA05001F0290 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FAB7EA518FCEA05001F0290 /* XCTest.framework in Frameworks */,
+				3FAB7EA718FCEA05001F0290 /* UIKit.framework in Frameworks */,
+				3FAB7EA618FCEA05001F0290 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B3D327118FF0B8D008B5D73 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0B3D326518FEF905008B5D73 /* FeedViewController.h */,
+				0B3D326618FEF905008B5D73 /* FeedViewController.m */,
+			);
+			name = Feed;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0B3D327318FF0B93008B5D73 /* Cozinha */ = {
+			isa = PBXGroup;
+			children = (
+				0B3D326F18FF06E4008B5D73 /* KitchenViewController.m */,
+				0B3D326E18FF06E4008B5D73 /* KitchenViewController.h */,
+			);
+			name = Cozinha;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0B3D327418FF0BB0008B5D73 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB7E9B18FCEA05001F0290 /* ViewController.m */,
+				3FAB7E9A18FCEA05001F0290 /* ViewController.h */,
+			);
+			name = Map;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0B3D327518FF0C29008B5D73 /* Barra */ = {
+			isa = PBXGroup;
+			children = (
+				0B3D326318FEF787008B5D73 /* BarraViewController.m */,
+				0B3D326218FEF787008B5D73 /* BarraViewController.h */,
+			);
+			name = Barra;
+			sourceTree = "<group>";
+		};
+		0B3D327618FF0C3D008B5D73 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				0B3D326B18FEFF00008B5D73 /* EmptySegue.h */,
+				0B3D326C18FEFF00008B5D73 /* EmptySegue.m */,
+				0B3D326818FEFB77008B5D73 /* ContainerViewController.h */,
+				0B3D326918FEFB77008B5D73 /* ContainerViewController.m */,
+			);
+			name = Container;
+			sourceTree = "<group>";
+		};
+		0B564DE318FDB42A00A59821 /* Classes Basicas */ = {
+			isa = PBXGroup;
+			children = (
+				0B564DE418FDB46000A59821 /* CoordenadaVegetariano.h */,
+				0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */,
+				0B564DE718FDB47100A59821 /* DateBaseCoordenadaVegetariano.h */,
+				0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */,
+			);
+			name = "Classes Basicas";
+			sourceTree = "<group>";
+		};
+		3FAB7E7918FCEA05001F0290 = {
+			isa = PBXGroup;
+			children = (
+				3FB7B23618FE54A800468BAB /* Imagens */,
+				3FAB7E8B18FCEA05001F0290 /* iVegetables */,
+				3FAB7EAA18FCEA05001F0290 /* iVegetablesTests */,
+				3FAB7E8418FCEA05001F0290 /* Frameworks */,
+				3FAB7E8318FCEA05001F0290 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FAB7E8318FCEA05001F0290 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB7E8218FCEA05001F0290 /* iVegetables.app */,
+				3FAB7EA318FCEA05001F0290 /* iVegetablesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FAB7E8418FCEA05001F0290 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */,
+				3FAB7E8518FCEA05001F0290 /* Foundation.framework */,
+				3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */,
+				3FAB7E8918FCEA05001F0290 /* UIKit.framework */,
+				3FAB7EA418FCEA05001F0290 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FAB7E8B18FCEA05001F0290 /* iVegetables */ = {
+			isa = PBXGroup;
+			children = (
+				0B564DE318FDB42A00A59821 /* Classes Basicas */,
+				3FAB7EBC18FCEDB6001F0290 /* Controladores */,
+				3FAB7E9418FCEA05001F0290 /* AppDelegate.h */,
+				3FAB7E9518FCEA05001F0290 /* AppDelegate.m */,
+				3FAB7E9718FCEA05001F0290 /* Main.storyboard */,
+				3FAB7E9D18FCEA05001F0290 /* Images.xcassets */,
+				3FAB7E8C18FCEA05001F0290 /* Supporting Files */,
+			);
+			path = iVegetables;
+			sourceTree = "<group>";
+		};
+		3FAB7E8C18FCEA05001F0290 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB7E8D18FCEA05001F0290 /* iVegetables-Info.plist */,
+				3FAB7E8E18FCEA05001F0290 /* InfoPlist.strings */,
+				3FAB7E9118FCEA05001F0290 /* main.m */,
+				3FAB7E9318FCEA05001F0290 /* iVegetables-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FAB7EAA18FCEA05001F0290 /* iVegetablesTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB7EB018FCEA05001F0290 /* iVegetablesTests.m */,
+				3FAB7EAB18FCEA05001F0290 /* Supporting Files */,
+			);
+			path = iVegetablesTests;
+			sourceTree = "<group>";
+		};
+		3FAB7EAB18FCEA05001F0290 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB7EAC18FCEA05001F0290 /* iVegetablesTests-Info.plist */,
+				3FAB7EAD18FCEA05001F0290 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FAB7EBC18FCEDB6001F0290 /* Controladores */ = {
+			isa = PBXGroup;
+			children = (
+				0B3D327618FF0C3D008B5D73 /* Container */,
+				0B3D327518FF0C29008B5D73 /* Barra */,
+				0B3D327318FF0B93008B5D73 /* Cozinha */,
+				0B3D327118FF0B8D008B5D73 /* Feed */,
+				0B3D327418FF0BB0008B5D73 /* Map */,
+			);
+			name = Controladores;
+			sourceTree = "<group>";
+		};
+		3FB7B23618FE54A800468BAB /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				3FB7B23718FE54B600468BAB /* routes.png */,
+				3FB7B23918FE60E300468BAB /* GreenPin.jpg */,
+			);
+			name = Imagens;
+			path = iVegetables;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FAB7E8118FCEA05001F0290 /* iVegetables */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FAB7EB418FCEA05001F0290 /* Build configuration list for PBXNativeTarget "iVegetables" */;
+			buildPhases = (
+				3FAB7E7E18FCEA05001F0290 /* Sources */,
+				3FAB7E7F18FCEA05001F0290 /* Frameworks */,
+				3FAB7E8018FCEA05001F0290 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iVegetables;
+			productName = iVegetables;
+			productReference = 3FAB7E8218FCEA05001F0290 /* iVegetables.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FAB7EA218FCEA05001F0290 /* iVegetablesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FAB7EB718FCEA05001F0290 /* Build configuration list for PBXNativeTarget "iVegetablesTests" */;
+			buildPhases = (
+				3FAB7E9F18FCEA05001F0290 /* Sources */,
+				3FAB7EA018FCEA05001F0290 /* Frameworks */,
+				3FAB7EA118FCEA05001F0290 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FAB7EA918FCEA05001F0290 /* PBXTargetDependency */,
+			);
+			name = iVegetablesTests;
+			productName = iVegetablesTests;
+			productReference = 3FAB7EA318FCEA05001F0290 /* iVegetablesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FAB7E7A18FCEA05001F0290 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Vinicius Resende Fialho";
+				TargetAttributes = {
+					3FAB7EA218FCEA05001F0290 = {
+						TestTargetID = 3FAB7E8118FCEA05001F0290;
+					};
+				};
+			};
+			buildConfigurationList = 3FAB7E7D18FCEA05001F0290 /* Build configuration list for PBXProject "iVegetables" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FAB7E7918FCEA05001F0290;
+			productRefGroup = 3FAB7E8318FCEA05001F0290 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FAB7E8118FCEA05001F0290 /* iVegetables */,
+				3FAB7EA218FCEA05001F0290 /* iVegetablesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FAB7E8018FCEA05001F0290 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FAB7E9E18FCEA05001F0290 /* Images.xcassets in Resources */,
+				3FAB7E9018FCEA05001F0290 /* InfoPlist.strings in Resources */,
+				3FAB7E9918FCEA05001F0290 /* Main.storyboard in Resources */,
+				3FB7B23A18FE60E300468BAB /* GreenPin.jpg in Resources */,
+				3FB7B23818FE54B600468BAB /* routes.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FAB7EA118FCEA05001F0290 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FAB7EAF18FCEA05001F0290 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FAB7E7E18FCEA05001F0290 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FAB7E9C18FCEA05001F0290 /* ViewController.m in Sources */,
+				3FAB7E9618FCEA05001F0290 /* AppDelegate.m in Sources */,
+				0B3D326718FEF905008B5D73 /* FeedViewController.m in Sources */,
+				0B3D326D18FEFF00008B5D73 /* EmptySegue.m in Sources */,
+				3FAB7E9218FCEA05001F0290 /* main.m in Sources */,
+				0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */,
+				0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */,
+				0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */,
+				0B3D326A18FEFB77008B5D73 /* ContainerViewController.m in Sources */,
+				0B564DE918FDB47100A59821 /* DateBaseCoordenadaVegetariano.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FAB7E9F18FCEA05001F0290 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FAB7EB118FCEA05001F0290 /* iVegetablesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FAB7EA918FCEA05001F0290 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FAB7E8118FCEA05001F0290 /* iVegetables */;
+			targetProxy = 3FAB7EA818FCEA05001F0290 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3FAB7E8E18FCEA05001F0290 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FAB7E8F18FCEA05001F0290 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3FAB7E9718FCEA05001F0290 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FAB7E9818FCEA05001F0290 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FAB7EAD18FCEA05001F0290 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FAB7EAE18FCEA05001F0290 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FAB7EB218FCEA05001F0290 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		3FAB7EB318FCEA05001F0290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FAB7EB518FCEA05001F0290 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVegetables/iVegetables-Prefix.pch";
+				INFOPLIST_FILE = "iVegetables/iVegetables-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3FAB7EB618FCEA05001F0290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVegetables/iVegetables-Prefix.pch";
+				INFOPLIST_FILE = "iVegetables/iVegetables-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3FAB7EB818FCEA05001F0290 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iVegetables.app/iVegetables";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVegetables/iVegetables-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iVegetablesTests/iVegetablesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3FAB7EB918FCEA05001F0290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iVegetables.app/iVegetables";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVegetables/iVegetables-Prefix.pch";
+				INFOPLIST_FILE = "iVegetablesTests/iVegetablesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FAB7E7D18FCEA05001F0290 /* Build configuration list for PBXProject "iVegetables" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FAB7EB218FCEA05001F0290 /* Debug */,
+				3FAB7EB318FCEA05001F0290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FAB7EB418FCEA05001F0290 /* Build configuration list for PBXNativeTarget "iVegetables" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FAB7EB518FCEA05001F0290 /* Debug */,
+				3FAB7EB618FCEA05001F0290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FAB7EB718FCEA05001F0290 /* Build configuration list for PBXNativeTarget "iVegetablesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FAB7EB818FCEA05001F0290 /* Debug */,
+				3FAB7EB918FCEA05001F0290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FAB7E7A18FCEA05001F0290 /* Project object */;
+}
