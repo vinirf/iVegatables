@@ -268,7 +268,7 @@
      CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
     
     UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-    recipeImageView.image = [UIImage imageNamed:@"routes.png"];
+    recipeImageView.image = [UIImage imageNamed:@"greenPin.jpg"];
     
     UILabel *recipeNameLabel = (UILabel *)[cell viewWithTag:101];
     recipeNameLabel.text = recipe.nomeLugar;

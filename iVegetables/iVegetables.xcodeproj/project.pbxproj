@@ -12,6 +12,8 @@
 		0B3D326A18FEFB77008B5D73 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326918FEFB77008B5D73 /* ContainerViewController.m */; };
 		0B3D326D18FEFF00008B5D73 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326C18FEFF00008B5D73 /* EmptySegue.m */; };
 		0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326F18FF06E4008B5D73 /* KitchenViewController.m */; };
+		0B3D327918FF1CBE008B5D73 /* Noticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D327818FF1CBE008B5D73 /* Noticia.m */; };
+		0B3D327C18FF1CCD008B5D73 /* DateBaseNoticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D327B18FF1CCD008B5D73 /* DateBaseNoticia.m */; };
 		0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */; };
 		0B564DE918FDB47100A59821 /* DateBaseCoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */; };
 		3FAB7E8618FCEA05001F0290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8518FCEA05001F0290 /* Foundation.framework */; };
@@ -54,6 +56,10 @@
 		0B3D326C18FEFF00008B5D73 /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptySegue.m; path = ../EmptySegue.m; sourceTree = "<group>"; };
 		0B3D326E18FF06E4008B5D73 /* KitchenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitchenViewController.h; sourceTree = "<group>"; };
 		0B3D326F18FF06E4008B5D73 /* KitchenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KitchenViewController.m; sourceTree = "<group>"; };
+		0B3D327718FF1CBE008B5D73 /* Noticia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Noticia.h; sourceTree = "<group>"; };
+		0B3D327818FF1CBE008B5D73 /* Noticia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Noticia.m; sourceTree = "<group>"; };
+		0B3D327A18FF1CCD008B5D73 /* DateBaseNoticia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateBaseNoticia.h; sourceTree = "<group>"; };
+		0B3D327B18FF1CCD008B5D73 /* DateBaseNoticia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateBaseNoticia.m; sourceTree = "<group>"; };
 		0B564DE418FDB46000A59821 /* CoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordenadaVegetariano.h; sourceTree = "<group>"; };
 		0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordenadaVegetariano.m; sourceTree = "<group>"; };
 		0B564DE718FDB47100A59821 /* DateBaseCoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateBaseCoordenadaVegetariano.h; sourceTree = "<group>"; };
@@ -164,6 +170,10 @@
 				0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */,
 				0B564DE718FDB47100A59821 /* DateBaseCoordenadaVegetariano.h */,
 				0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */,
+				0B3D327718FF1CBE008B5D73 /* Noticia.h */,
+				0B3D327818FF1CBE008B5D73 /* Noticia.m */,
+				0B3D327A18FF1CCD008B5D73 /* DateBaseNoticia.h */,
+				0B3D327B18FF1CCD008B5D73 /* DateBaseNoticia.m */,
 			);
 			name = "Classes Basicas";
 			sourceTree = "<group>";
@@ -368,6 +378,8 @@
 				3FAB7E9618FCEA05001F0290 /* AppDelegate.m in Sources */,
 				0B3D326718FEF905008B5D73 /* FeedViewController.m in Sources */,
 				0B3D326D18FEFF00008B5D73 /* EmptySegue.m in Sources */,
+				0B3D327C18FF1CCD008B5D73 /* DateBaseNoticia.m in Sources */,
+				0B3D327918FF1CBE008B5D73 /* Noticia.m in Sources */,
 				3FAB7E9218FCEA05001F0290 /* main.m in Sources */,
 				0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */,
 				0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */,

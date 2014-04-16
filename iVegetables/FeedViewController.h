@@ -8,6 +8,12 @@
 
 #import "ViewController.h"
 
-@interface FeedViewController : ViewController
+@interface FeedViewController : ViewController <UITableViewDataSource, UITableViewDelegate> {
+    
+}
+
+
+@property (weak, nonatomic) IBOutlet UITableView *newsTable;
+
 
 @end
