@@ -31,6 +31,7 @@
 		3FAB7EAF18FCEA05001F0290 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB7EAD18FCEA05001F0290 /* InfoPlist.strings */; };
 		3FAB7EB118FCEA05001F0290 /* iVegetablesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB7EB018FCEA05001F0290 /* iVegetablesTests.m */; };
 		3FAB7EBB18FCEBBF001F0290 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */; };
+		3FAD817718FFA9C500B76306 /* DetalheNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD817618FFA9C500B76306 /* DetalheNewsViewController.m */; };
 		3FB7B23818FE54B600468BAB /* routes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB7B23718FE54B600468BAB /* routes.png */; };
 		3FB7B23A18FE60E300468BAB /* GreenPin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FB7B23918FE60E300468BAB /* GreenPin.jpg */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,8 @@
 		3FAB7EAE18FCEA05001F0290 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3FAB7EB018FCEA05001F0290 /* iVegetablesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iVegetablesTests.m; sourceTree = "<group>"; };
 		3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3FAD817518FFA9C500B76306 /* DetalheNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheNewsViewController.h; sourceTree = "<group>"; };
+		3FAD817618FFA9C500B76306 /* DetalheNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheNewsViewController.m; sourceTree = "<group>"; };
 		3FB7B23718FE54B600468BAB /* routes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = routes.png; sourceTree = "<group>"; };
 		3FB7B23918FE60E300468BAB /* GreenPin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GreenPin.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +119,7 @@
 		0B3D327118FF0B8D008B5D73 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				3FAD817818FFB84600B76306 /* DetalhesNoticias */,
 				0B3D326518FEF905008B5D73 /* FeedViewController.h */,
 				0B3D326618FEF905008B5D73 /* FeedViewController.m */,
 			);
@@ -265,6 +269,16 @@
 			name = Controladores;
 			sourceTree = "<group>";
 		};
+		3FAD817818FFB84600B76306 /* DetalhesNoticias */ = {
+			isa = PBXGroup;
+			children = (
+				3FAD817518FFA9C500B76306 /* DetalheNewsViewController.h */,
+				3FAD817618FFA9C500B76306 /* DetalheNewsViewController.m */,
+			);
+			name = DetalhesNoticias;
+			path = iVegetables;
+			sourceTree = "<group>";
+		};
 		3FB7B23618FE54A800468BAB /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +392,7 @@
 				3FAB7E9618FCEA05001F0290 /* AppDelegate.m in Sources */,
 				0B3D326718FEF905008B5D73 /* FeedViewController.m in Sources */,
 				0B3D326D18FEFF00008B5D73 /* EmptySegue.m in Sources */,
+				3FAD817718FFA9C500B76306 /* DetalheNewsViewController.m in Sources */,
 				0B3D327C18FF1CCD008B5D73 /* DateBaseNoticia.m in Sources */,
 				0B3D327918FF1CBE008B5D73 /* Noticia.m in Sources */,
 				3FAB7E9218FCEA05001F0290 /* main.m in Sources */,

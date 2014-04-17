@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D093CAAE-FACF-4C13-8BCE-2EC8D08E3148</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iVegetables</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FBB7BB67-B8D1-4499-BC1B-C6B330F3E993</key>
+		<string>https://github.com/vinirf/iVegatables.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iVegetables/iVegetables.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FBB7BB67-B8D1-4499-BC1B-C6B330F3E993</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vinirf/iVegatables.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FBB7BB67-B8D1-4499-BC1B-C6B330F3E993</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FBB7BB67-B8D1-4499-BC1B-C6B330F3E993</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iVegatables</string>
+		</dict>
+	</array>
+</dict>
+</plist>

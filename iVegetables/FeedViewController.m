@@ -31,7 +31,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self serializarDados];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    [[self navigationItem] setBackBarButtonItem:backButton];
+    
+    [self serializaTodasAsPaginasSite];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,10 +43,80 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)serializaTodasAsPaginasSite{
+    
+     NSString* sitePag1 = @"http://www.revistavegetarianos.com.br/category/noticias/";
+     [self serializarDados:sitePag1];
+    
+    NSString* sitePag2 = @"http://www.revistavegetarianos.com.br/category/noticias/page/2/";
+    [self serializarDados:sitePag2];
+    
+    
+    NSString* sitePag3 = @"http://www.revistavegetarianos.com.br/category/noticias/page/3/";
+    [self serializarDados:sitePag3];
+    
+    
+}
 
--(void)serializarDados{
+-(void)serializarDadosDoLink: (NSString*)siteLink {
+    NSString* url = @"http://www.revistavegetarianos.com.br/noticias/superbom-apresenta-produtos-com-descontos-especiais-para-os-consumidores/";
+    NSURL* query = [NSURL URLWithString:url];
+    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
+    
+    NSString *string=result;
+    NSRange searchFromRange = [string rangeOfString:@"single-post-wrap"];
+    NSRange searchToRange = [string rangeOfString:@"ad fullbanner"];
+    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
+    
+    NSString *stringFinal = substring;
+    NSLog(@"string %@",stringFinal);
+    
+//    NSRange continua =[stringFinal rangeOfString:@"<div class=\"post\">"];
+//    
+//    while(continua.location != NSNotFound){
+//        
+//        Noticia *news = [[Noticia alloc]init];
+//        
+//        stringFinal = [stringFinal substringFromIndex:continua.location];
+//        
+//        
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"ategory-post-content"].location+43];
+//        news.link = [stringFinal substringToIndex:[stringFinal rangeOfString:@"/\""].location];
+//        
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
+//        news.imagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
+//        
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@" title=\""].location+18];
+//        news.titulo = [stringFinal substringToIndex:[stringFinal rangeOfString:@"<span"].location-2];
+//        
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b>"].location+3];
+//        news.data = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location];
+//        
+//        
+//        //Entra dentro link
+//        
+//        
+//        
+//        [[DateBaseNoticia sharedManager]AddNoticia:news];
+//        
+//        NSLog(@"link %@ ",news.link);
+//        NSLog(@"imag %@ ",news.imagem);
+//        NSLog(@"titu %@ ",news.titulo);
+//        NSLog(@"data %@ ",news.data);
+//        NSLog(@"\n");
+//        
+//        continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
+//        
+//        
+//    }
+//    
+//    continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
+//    [[self newsTable]reloadData];
+}
 
-    NSString* url = @"http://www.revistavegetarianos.com.br/category/noticias/";
+-(void)serializarDados : (NSString*)siteLink{
+
+    NSString* url = siteLink;
     NSURL* query = [NSURL URLWithString:url];
     NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
 
@@ -61,6 +134,11 @@
         Noticia *news = [[Noticia alloc]init];
         
         stringFinal = [stringFinal substringFromIndex:continua.location];
+        
+        
+        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"ategory-post-content"].location+43];
+        news.link = [stringFinal substringToIndex:[stringFinal rangeOfString:@"/\""].location];
+        
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
         news.imagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
         
@@ -70,12 +148,17 @@
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b>"].location+3];
         news.data = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location];
         
+        
+        //Entra dentro link
+        [self serializarDadosDoLink:news.link];
+        
 
         [[DateBaseNoticia sharedManager]AddNoticia:news];
         
-        NSLog(@"im %@ ",news.imagem);
-        NSLog(@"im %@ ",news.titulo);
-        NSLog(@"im %@ ",news.data);
+        NSLog(@"link %@ ",news.link);
+        NSLog(@"imag %@ ",news.imagem);
+        NSLog(@"titu %@ ",news.titulo);
+        NSLog(@"data %@ ",news.data);
         NSLog(@"\n");
         
         continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
@@ -84,7 +167,7 @@
     }
     
     continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
-     [[self newsTable]reloadData];
+    [[self newsTable]reloadData];
 }
 
 
@@ -113,10 +196,11 @@
     // Display recipe in the table cell
     Noticia *recipe = [[[DateBaseNoticia sharedManager]listaNoticias] objectAtIndex:[indexPath row]];
     
-    //NSString *ImageURL = recipe.imagem;
-    //NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-    recipeImageView.image = [UIImage imageWithContentsOfFile:@"http://www.revistavegetarianos.com.br/wp-content/uploads/2013/12/vegetarianos82image15-2-220x140.jpg"];
+    NSURL *url = [NSURL URLWithString:[recipe imagem]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data ];
+    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:110];
+    recipeImageView.image = img;
     
     UILabel *recipeNameLabel = (UILabel *)[cell viewWithTag:101];
     recipeNameLabel.text = recipe.titulo;
@@ -132,9 +216,20 @@
     return [NSString stringWithFormat:@"Noticias Vegano "];
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 130.0;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 160.0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
 
 
 @end

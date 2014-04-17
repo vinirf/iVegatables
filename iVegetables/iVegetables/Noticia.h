@@ -15,5 +15,6 @@
 @property NSString *titulo;
 @property NSString *data;
 @property NSString *imagem;
+@property NSString *link;
 
 @end
