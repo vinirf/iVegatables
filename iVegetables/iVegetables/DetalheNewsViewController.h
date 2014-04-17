@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetalheNewsViewController : UIViewController
+@interface DetalheNewsViewController : UIViewController <UIWebViewDelegate>
+@property (strong, nonatomic) IBOutlet UIWebView *webviewNews;
+@property NSString *linkShared;
 
 @end

@@ -9,6 +9,7 @@
 #import "FeedViewController.h"
 #import "DateBaseNoticia.h"
 #import "Noticia.h"
+#import "AuxWebNoticia.h"
 
 @interface FeedViewController ()
 
@@ -69,49 +70,40 @@
     NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
     
     NSString *stringFinal = substring;
-    NSLog(@"string %@",stringFinal);
     
-//    NSRange continua =[stringFinal rangeOfString:@"<div class=\"post\">"];
-//    
-//    while(continua.location != NSNotFound){
+        
+    Noticia *news = [[Noticia alloc]init];
+    
+    
+    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
+    news.cabecelhoImagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
+    
+    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<p>"].location+3];
+    NSString *text1 = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</p>"].location-3];
+    NSLog(@"str %@",text1);
+    
+        
+//    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
+//    news.imagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
 //        
-//        Noticia *news = [[Noticia alloc]init];
+//    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@" title=\""].location+18];
+//    news.titulo = [stringFinal substringToIndex:[stringFinal rangeOfString:@"<span"].location-2];
 //        
-//        stringFinal = [stringFinal substringFromIndex:continua.location];
-//        
-//        
-//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"ategory-post-content"].location+43];
-//        news.link = [stringFinal substringToIndex:[stringFinal rangeOfString:@"/\""].location];
-//        
-//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
-//        news.imagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
-//        
-//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@" title=\""].location+18];
-//        news.titulo = [stringFinal substringToIndex:[stringFinal rangeOfString:@"<span"].location-2];
-//        
-//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b>"].location+3];
-//        news.data = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location];
-//        
-//        
-//        //Entra dentro link
-//        
-//        
-//        
-//        [[DateBaseNoticia sharedManager]AddNoticia:news];
-//        
-//        NSLog(@"link %@ ",news.link);
-//        NSLog(@"imag %@ ",news.imagem);
-//        NSLog(@"titu %@ ",news.titulo);
-//        NSLog(@"data %@ ",news.data);
-//        NSLog(@"\n");
-//        
-//        continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
-//        
-//        
-//    }
-//    
-//    continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
-//    [[self newsTable]reloadData];
+//    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b>"].location+3];
+//    news.data = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location];
+    
+        
+        //Entra dentro link
+        
+        
+        
+        //[[DateBaseNoticia sharedManager]AddNoticia:news];
+        
+
+        NSLog(@"\n");
+    
+
+    [[self newsTable]reloadData];
 }
 
 -(void)serializarDados : (NSString*)siteLink{
@@ -137,7 +129,7 @@
         
         
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"ategory-post-content"].location+43];
-        news.link = [stringFinal substringToIndex:[stringFinal rangeOfString:@"/\""].location];
+        NSString *caminhoUrl = [stringFinal substringToIndex:[stringFinal rangeOfString:@"/\""].location];
         
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
         news.imagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
@@ -148,6 +140,9 @@
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b>"].location+3];
         news.data = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location];
         
+        
+        news.link = [NSString stringWithFormat:@"%@%@",@"http://",caminhoUrl];
+
         
         //Entra dentro link
         [self serializarDadosDoLink:news.link];
@@ -222,13 +217,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    Noticia *recipe = [[[DateBaseNoticia sharedManager]listaNoticias] objectAtIndex:[indexPath row]];
+    [AuxWebNoticia sharedManager].link = [recipe link];
+
+   
 }
 
 

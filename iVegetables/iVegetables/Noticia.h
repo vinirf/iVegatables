@@ -16,5 +16,7 @@
 @property NSString *data;
 @property NSString *imagem;
 @property NSString *link;
+@property NSString *cabecelhoImagem;
+@property NSString *texto;
 
 @end

@@ -14,6 +14,7 @@
 		0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326F18FF06E4008B5D73 /* KitchenViewController.m */; };
 		0B3D327918FF1CBE008B5D73 /* Noticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D327818FF1CBE008B5D73 /* Noticia.m */; };
 		0B3D327C18FF1CCD008B5D73 /* DateBaseNoticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D327B18FF1CCD008B5D73 /* DateBaseNoticia.m */; };
+		0B43C349190052340000103C /* AuxWebNoticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B43C348190052340000103C /* AuxWebNoticia.m */; };
 		0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */; };
 		0B564DE918FDB47100A59821 /* DateBaseCoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */; };
 		3FAB7E8618FCEA05001F0290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8518FCEA05001F0290 /* Foundation.framework */; };
@@ -61,6 +62,8 @@
 		0B3D327818FF1CBE008B5D73 /* Noticia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Noticia.m; sourceTree = "<group>"; };
 		0B3D327A18FF1CCD008B5D73 /* DateBaseNoticia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateBaseNoticia.h; sourceTree = "<group>"; };
 		0B3D327B18FF1CCD008B5D73 /* DateBaseNoticia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateBaseNoticia.m; sourceTree = "<group>"; };
+		0B43C347190052340000103C /* AuxWebNoticia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuxWebNoticia.h; sourceTree = "<group>"; };
+		0B43C348190052340000103C /* AuxWebNoticia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuxWebNoticia.m; sourceTree = "<group>"; };
 		0B564DE418FDB46000A59821 /* CoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordenadaVegetariano.h; sourceTree = "<group>"; };
 		0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordenadaVegetariano.m; sourceTree = "<group>"; };
 		0B564DE718FDB47100A59821 /* DateBaseCoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateBaseCoordenadaVegetariano.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				0B3D327818FF1CBE008B5D73 /* Noticia.m */,
 				0B3D327A18FF1CCD008B5D73 /* DateBaseNoticia.h */,
 				0B3D327B18FF1CCD008B5D73 /* DateBaseNoticia.m */,
+				0B43C347190052340000103C /* AuxWebNoticia.h */,
+				0B43C348190052340000103C /* AuxWebNoticia.m */,
 			);
 			name = "Classes Basicas";
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				3FAD817718FFA9C500B76306 /* DetalheNewsViewController.m in Sources */,
 				0B3D327C18FF1CCD008B5D73 /* DateBaseNoticia.m in Sources */,
 				0B3D327918FF1CBE008B5D73 /* Noticia.m in Sources */,
+				0B43C349190052340000103C /* AuxWebNoticia.m in Sources */,
 				3FAB7E9218FCEA05001F0290 /* main.m in Sources */,
 				0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */,
 				0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */,
