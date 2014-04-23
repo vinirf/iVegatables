@@ -80,7 +80,7 @@
     
     stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<p>"].location+3];
     NSString *text1 = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</p>"].location-3];
-    NSLog(@"str %@",text1);
+    //NSLog(@"str %@",text1);
     
         
 //    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
@@ -100,7 +100,7 @@
         //[[DateBaseNoticia sharedManager]AddNoticia:news];
         
 
-        NSLog(@"\n");
+       // NSLog(@"\n");
     
 
     [[self newsTable]reloadData];
@@ -149,12 +149,12 @@
         
 
         [[DateBaseNoticia sharedManager]AddNoticia:news];
-        
-        NSLog(@"link %@ ",news.link);
-        NSLog(@"imag %@ ",news.imagem);
-        NSLog(@"titu %@ ",news.titulo);
-        NSLog(@"data %@ ",news.data);
-        NSLog(@"\n");
+//        
+//        NSLog(@"link %@ ",news.link);
+//        NSLog(@"imag %@ ",news.imagem);
+//        NSLog(@"titu %@ ",news.titulo);
+//        NSLog(@"data %@ ",news.data);
+//        NSLog(@"\n");
         
         continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
         

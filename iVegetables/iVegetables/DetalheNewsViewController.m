@@ -50,6 +50,12 @@
 }
 */
 
+
+//Impede que a webview abra novos links
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    return !(navigationType==UIWebViewNavigationTypeLinkClicked);;
+}
+
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
    
     //[detailsWebView setFrame:CGRectMake(detailsWebView.frame.origin.x, detailsWebView.frame.origin.y, 300.0, detailsWebView.frame.size.height)];
