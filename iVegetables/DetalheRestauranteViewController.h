@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetalheRestauranteViewController : UIViewController
+@interface DetalheRestauranteViewController : UIViewController <UIWebViewDelegate>
+
+
 
 @end

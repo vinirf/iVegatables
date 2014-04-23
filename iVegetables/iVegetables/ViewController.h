@@ -12,10 +12,8 @@
 @interface ViewController : UIViewController <MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapVegetables;
-
-@property CLLocationCoordinate2D posUsuario;
-
-@property (weak, nonatomic) IBOutlet UITableView *Placestable;
+@property (weak, nonatomic) IBOutlet MKMapView *mapVegetables; //Mapa
+@property CLLocationCoordinate2D posUsuario; //Localização do usuário
+@property (weak, nonatomic) IBOutlet UITableView *Placestable; //Tabela
 
 @end

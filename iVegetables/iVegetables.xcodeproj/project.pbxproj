@@ -156,10 +156,9 @@
 		0B3D327418FF0BB0008B5D73 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				A8605ECE190841E2000D9D23 /* DetalhesRestaurantes */,
 				3FAB7E9B18FCEA05001F0290 /* ViewController.m */,
 				3FAB7E9A18FCEA05001F0290 /* ViewController.h */,
-				A8605ECB19083011000D9D23 /* DetalheRestauranteViewController.h */,
-				A8605ECC19083011000D9D23 /* DetalheRestauranteViewController.m */,
 			);
 			name = Map;
 			path = ..;
@@ -312,6 +311,15 @@
 			);
 			name = Imagens;
 			path = iVegetables;
+			sourceTree = "<group>";
+		};
+		A8605ECE190841E2000D9D23 /* DetalhesRestaurantes */ = {
+			isa = PBXGroup;
+			children = (
+				A8605ECB19083011000D9D23 /* DetalheRestauranteViewController.h */,
+				A8605ECC19083011000D9D23 /* DetalheRestauranteViewController.m */,
+			);
+			name = DetalhesRestaurantes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,22 +1,14 @@
-//
-//  DetalheNewsViewController.m
-//  iVegetables
-//
-//  Created by Vinicius Resende Fialho on 17/04/14.
-//  Copyright (c) 2014 Vinicius Resende Fialho. All rights reserved.
-//
-
 #import "DetalheNewsViewController.h"
 #import "AuxWebNoticia.h"
 
 @interface DetalheNewsViewController ()
-
 @end
+
+
 
 @implementation DetalheNewsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -24,17 +16,15 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.webviewNews.delegate = self;
     [self loadUIWebView];
     [self pegarDivNoticia];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -50,8 +40,7 @@
 }
 */
 
-
-//Impede que a webview abra novos links
+//Método do delegate de webview, impede que a webview abra novos links
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     return !(navigationType==UIWebViewNavigationTypeLinkClicked);;
 }
@@ -63,8 +52,7 @@
     [self.webviewNews sizeThatFits:constraint];
 }
 
-- (void)loadUIWebView
-{
+- (void)loadUIWebView{
     //UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];  //Change self.view.bounds to a smaller CGRect if you don't want it to take up the whole screen
     self.linkShared = [AuxWebNoticia sharedManager].link;
     NSURL *url = [NSURL URLWithString:self.linkShared];
@@ -75,13 +63,11 @@
     
     
     [self.webviewNews loadRequest: urlRequest];
-    
-    
     [self.webviewNews loadHTMLString:[self pegarDivNoticia] baseURL:url];
-    
 }
 
 
+//Seleciona apenas o texto da noticia no html
 -(NSString *)pegarDivNoticia{
     
     NSString* url = [AuxWebNoticia sharedManager].link;

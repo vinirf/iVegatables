@@ -28,10 +28,8 @@
     
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
         // Add observer
-        [self.mapVegetables.userLocation addObserver:self
-                                    forKeyPath:@"location"
-                                       options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
-                                       context:NULL];
+        [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+        
         
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
         [[self navigationItem] setBackBarButtonItem:backButton];
@@ -243,6 +241,7 @@
 }
 
 
+
 //Preeche a tabela de rotas
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    
@@ -283,6 +282,12 @@
     recipeTelefoneLabel.text = recipe.telefone;
     
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
+    
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
