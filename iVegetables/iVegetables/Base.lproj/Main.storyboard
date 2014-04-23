@@ -105,20 +105,16 @@
         <scene sceneID="PGJ-Gm-8SS">
             <objects>
                 <viewController id="yaQ-I2-Ka6" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7PV-am-Los"/>
-                        <viewControllerLayoutGuide type="bottom" id="ecc-uu-d6m"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dDT-oJ-yYh">
+                    <webView key="view" contentMode="scaleToFill" id="y6T-Cd-V99">
                         <rect key="frame" x="0.0" y="0.0" width="624" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </webView>
                     <navigationItem key="navigationItem" id="0zB-eD-Nqg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3NB-DF-EBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3180" y="-1993"/>
+            <point key="canvasLocation" x="3116" y="-1859"/>
         </scene>
         <!--Feed View Controller - Noticias Vegano-->
         <scene sceneID="rc1-d0-QCd">
@@ -237,6 +233,13 @@
                     <view key="view" contentMode="scaleToFill" id="DXZ-7O-lGz">
                         <rect key="frame" x="0.0" y="0.0" width="624" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6V-bV-sYI">
+                                <rect key="frame" x="35" y="-25" width="624" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="69V-Gj-jwn"/>
