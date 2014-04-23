@@ -109,12 +109,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="624" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <dataDetectorType key="dataDetectorTypes"/>
                     </webView>
                     <navigationItem key="navigationItem" id="0zB-eD-Nqg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3NB-DF-EBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="-1859"/>
+            <point key="canvasLocation" x="3138" y="-1943"/>
         </scene>
         <!--Feed View Controller - Noticias Vegano-->
         <scene sceneID="rc1-d0-QCd">
@@ -152,7 +153,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" tag="110" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="routes.png" translatesAutoresizingMaskIntoConstraints="NO" id="PrE-iF-gPV">
+                                                <imageView userInteractionEnabled="NO" tag="110" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PrE-iF-gPV">
                                                     <rect key="frame" x="6" y="11" width="193" height="143"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -181,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjw-0J-pwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="-493"/>
+            <point key="canvasLocation" x="2157" y="-493"/>
         </scene>
         <!--Detalhe News View Controller - Detalhes-->
         <scene sceneID="onc-d2-WVo">
@@ -205,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMD-Pw-VQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3334" y="-483"/>
+            <point key="canvasLocation" x="3146" y="-493"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GXb-KV-JCG">
@@ -340,12 +341,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFA-8d-maP">
+                            <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFA-8d-maP">
                                 <rect key="frame" x="0.0" y="0.0" width="144" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMb-iY-7tc">
-                                        <rect key="frame" x="13" y="244" width="141" height="100"/>
+                                        <rect key="frame" x="6" y="252" width="141" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="iconeNoticias.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -356,7 +357,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kw-Fs-kkb">
-                                        <rect key="frame" x="0.0" y="380" width="166" height="100"/>
+                                        <rect key="frame" x="-11" y="380" width="166" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="iconeCozinha.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,7 +368,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4k-2q-hDU">
-                                        <rect key="frame" x="29" y="115" width="95" height="83"/>
+                                        <rect key="frame" x="25" y="125" width="95" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="iconeRestaurantes.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
