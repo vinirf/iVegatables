@@ -35,6 +35,11 @@
 		3FAD817718FFA9C500B76306 /* DetalheNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD817618FFA9C500B76306 /* DetalheNewsViewController.m */; };
 		3FB7B23818FE54B600468BAB /* routes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB7B23718FE54B600468BAB /* routes.png */; };
 		3FB7B23A18FE60E300468BAB /* GreenPin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FB7B23918FE60E300468BAB /* GreenPin.jpg */; };
+		A8605EC419082E91000D9D23 /* backgroundVerde.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8605EBF19082E91000D9D23 /* backgroundVerde.jpg */; };
+		A8605EC519082E91000D9D23 /* iconeCozinha.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC019082E91000D9D23 /* iconeCozinha.png */; };
+		A8605EC619082E91000D9D23 /* iconeNoticias.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC119082E91000D9D23 /* iconeNoticias.png */; };
+		A8605EC819082E91000D9D23 /* pino.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC319082E91000D9D23 /* pino.png */; };
+		A8605ECA19082F5E000D9D23 /* iconeRestaurantes.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC919082F5E000D9D23 /* iconeRestaurantes.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +97,11 @@
 		3FAD817618FFA9C500B76306 /* DetalheNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheNewsViewController.m; sourceTree = "<group>"; };
 		3FB7B23718FE54B600468BAB /* routes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = routes.png; sourceTree = "<group>"; };
 		3FB7B23918FE60E300468BAB /* GreenPin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GreenPin.jpg; sourceTree = "<group>"; };
+		A8605EBF19082E91000D9D23 /* backgroundVerde.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundVerde.jpg; sourceTree = "<group>"; };
+		A8605EC019082E91000D9D23 /* iconeCozinha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeCozinha.png; sourceTree = "<group>"; };
+		A8605EC119082E91000D9D23 /* iconeNoticias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeNoticias.png; sourceTree = "<group>"; };
+		A8605EC319082E91000D9D23 /* pino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pino.png; sourceTree = "<group>"; };
+		A8605EC919082F5E000D9D23 /* iconeRestaurantes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeRestaurantes.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +299,11 @@
 			children = (
 				3FB7B23718FE54B600468BAB /* routes.png */,
 				3FB7B23918FE60E300468BAB /* GreenPin.jpg */,
+				A8605EBF19082E91000D9D23 /* backgroundVerde.jpg */,
+				A8605EC019082E91000D9D23 /* iconeCozinha.png */,
+				A8605EC919082F5E000D9D23 /* iconeRestaurantes.png */,
+				A8605EC119082E91000D9D23 /* iconeNoticias.png */,
+				A8605EC319082E91000D9D23 /* pino.png */,
 			);
 			name = Imagens;
 			path = iVegetables;
@@ -370,8 +385,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8605EC419082E91000D9D23 /* backgroundVerde.jpg in Resources */,
+				A8605EC819082E91000D9D23 /* pino.png in Resources */,
 				3FAB7E9E18FCEA05001F0290 /* Images.xcassets in Resources */,
 				3FAB7E9018FCEA05001F0290 /* InfoPlist.strings in Resources */,
+				A8605EC519082E91000D9D23 /* iconeCozinha.png in Resources */,
+				A8605ECA19082F5E000D9D23 /* iconeRestaurantes.png in Resources */,
+				A8605EC619082E91000D9D23 /* iconeNoticias.png in Resources */,
 				3FAB7E9918FCEA05001F0290 /* Main.storyboard in Resources */,
 				3FB7B23A18FE60E300468BAB /* GreenPin.jpg in Resources */,
 				3FB7B23818FE54B600468BAB /* routes.png in Resources */,
