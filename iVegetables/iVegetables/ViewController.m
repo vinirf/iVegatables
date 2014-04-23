@@ -33,6 +33,9 @@
                                        options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
                                        context:NULL];
         
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+        [[self navigationItem] setBackBarButtonItem:backButton];
+        
     }
    
         
@@ -66,7 +69,7 @@
         return nil;
         
     }else{
-        //[pinView setImage:[UIImage imageNamed:@"GreenPin.jpg"]];
+        [pinView setImage:[UIImage imageNamed:@"pino.png"]];
     }
     
     
@@ -283,7 +286,7 @@
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [NSString stringWithFormat:@"Lugares "];
+    return [NSString stringWithFormat:@"Restaurantes próximos à você"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

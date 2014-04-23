@@ -40,6 +40,7 @@
 		A8605EC619082E91000D9D23 /* iconeNoticias.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC119082E91000D9D23 /* iconeNoticias.png */; };
 		A8605EC819082E91000D9D23 /* pino.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC319082E91000D9D23 /* pino.png */; };
 		A8605ECA19082F5E000D9D23 /* iconeRestaurantes.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC919082F5E000D9D23 /* iconeRestaurantes.png */; };
+		A8605ECD19083011000D9D23 /* DetalheRestauranteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8605ECC19083011000D9D23 /* DetalheRestauranteViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		A8605EC119082E91000D9D23 /* iconeNoticias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeNoticias.png; sourceTree = "<group>"; };
 		A8605EC319082E91000D9D23 /* pino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pino.png; sourceTree = "<group>"; };
 		A8605EC919082F5E000D9D23 /* iconeRestaurantes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeRestaurantes.png; sourceTree = "<group>"; };
+		A8605ECB19083011000D9D23 /* DetalheRestauranteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheRestauranteViewController.h; sourceTree = "<group>"; };
+		A8605ECC19083011000D9D23 /* DetalheRestauranteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheRestauranteViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 			children = (
 				3FAB7E9B18FCEA05001F0290 /* ViewController.m */,
 				3FAB7E9A18FCEA05001F0290 /* ViewController.h */,
+				A8605ECB19083011000D9D23 /* DetalheRestauranteViewController.h */,
+				A8605ECC19083011000D9D23 /* DetalheRestauranteViewController.m */,
 			);
 			name = Map;
 			path = ..;
@@ -420,6 +425,7 @@
 				3FAD817718FFA9C500B76306 /* DetalheNewsViewController.m in Sources */,
 				0B3D327C18FF1CCD008B5D73 /* DateBaseNoticia.m in Sources */,
 				0B3D327918FF1CBE008B5D73 /* Noticia.m in Sources */,
+				A8605ECD19083011000D9D23 /* DetalheRestauranteViewController.m in Sources */,
 				0B43C349190052340000103C /* AuxWebNoticia.m in Sources */,
 				3FAB7E9218FCEA05001F0290 /* main.m in Sources */,
 				0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */,
