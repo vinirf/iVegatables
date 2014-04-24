@@ -288,8 +288,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
+    CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager] listaCoordenadasVegetarianos] objectAtIndex: [indexPath row]];
     [AuxCoordenadaVegetariano sharedManager].coordenada = recipe;
+    NSLog(@"guardou info restaurante");
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

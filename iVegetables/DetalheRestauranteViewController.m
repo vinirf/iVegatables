@@ -28,12 +28,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.coordenadaShared = [AuxCoordenadaVegetariano sharedManager].coordenada;
-    
-//    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag: 1];
-//    recipeImageView.image = img;
-    
    
-    self.lblNota.text = self.coordenadaShared.nota;
+    self.lblNota.text = [NSString stringWithFormat:@"%.1f", [self.coordenadaShared.nota doubleValue]];
     self.lblNome.text = self.coordenadaShared.nomeLugar;
     self.lblRua.text = self.coordenadaShared.rua;
     self.lblTelefone.text = self.coordenadaShared.telefone;
@@ -42,8 +38,7 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
