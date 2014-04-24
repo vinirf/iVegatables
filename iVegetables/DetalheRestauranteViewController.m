@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Vinicius Resende Fialho. All rights reserved.
 //
 
+
 #import "DetalheRestauranteViewController.h"
+#import "AuxCoordenadaVegetariano.h"
 
 @interface DetalheRestauranteViewController ()
 
@@ -23,10 +25,21 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.coordenadaShared = [AuxCoordenadaVegetariano sharedManager].coordenada;
+    
+//    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag: 1];
+//    recipeImageView.image = img;
+    
+   
+    self.lblNota.text = self.coordenadaShared.nota;
+    self.lblNome.text = self.coordenadaShared.nomeLugar;
+    self.lblRua.text = self.coordenadaShared.rua;
+    self.lblTelefone.text = self.coordenadaShared.telefone;
+    self.lblSite.text = self.coordenadaShared.site;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

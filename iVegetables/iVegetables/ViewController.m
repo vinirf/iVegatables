@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "CoordenadaVegetariano.h"
 #import "DateBaseCoordenadaVegetariano.h"
+#import "AuxCoordenadaVegetariano.h"
+
 
 
 #define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
@@ -287,8 +289,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
-    
-    
+    [AuxCoordenadaVegetariano sharedManager].coordenada = recipe;
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
