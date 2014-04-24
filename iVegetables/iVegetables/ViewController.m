@@ -95,8 +95,8 @@
     NSString *termoPesquisa = @"vegetariano";
     int qtdPesquisa = 10;
     
-    NSLog(@"string %f",latitude);
-    NSLog(@" sds %f",longitude);
+    NSLog(@"lat %f",latitude);
+    NSLog(@" long %f",longitude);
     
     NSString *thePath = [NSString stringWithFormat:@"%@%f%@%f%@%@%@%d",@"https://api.foursquare.com/v2/venues/explore?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=",latitude,@",",longitude,@"&query=",termoPesquisa,@"&limit=",qtdPesquisa];
     
@@ -131,6 +131,7 @@
         NSString *estadoPreco  =[r valueForKeyPath:@"price.message"];
         NSString *precoValor  =[r valueForKeyPath:@"price.tier"];
         NSString *raking  =[r valueForKeyPath:@"rating"];
+    
         NSString *horarioFunc  =[r valueForKeyPath:@"hours.status"];
         //NSString *icone  =[r valueForKeyPath:@"hours.status"];
         
@@ -189,7 +190,7 @@
         NSLog(@"V = %@",totalFreq);
         NSLog(@"V = %@",estadoPreco);
         NSLog(@"V = %@",precoValor);
-        NSLog(@"V = %@",raking);
+        NSLog(@"nota = %@",raking);
         NSLog(@"V = %@",horarioFunc);
         NSLog(@"V = %@",nomeComentario);
         NSLog(@"V = %@",nome2Comentario);

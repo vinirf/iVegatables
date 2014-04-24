@@ -17,6 +17,8 @@
 		0B43C349190052340000103C /* AuxWebNoticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B43C348190052340000103C /* AuxWebNoticia.m */; };
 		0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */; };
 		0B564DE918FDB47100A59821 /* DateBaseCoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */; };
+		0BA579E2190984BB00FC5DAF /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA579E1190984BB00FC5DAF /* Receita.m */; };
+		0BA579E5190994B800FC5DAF /* DataBaseReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA579E4190994B800FC5DAF /* DataBaseReceita.m */; };
 		3FAB7E8618FCEA05001F0290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8518FCEA05001F0290 /* Foundation.framework */; };
 		3FAB7E8818FCEA05001F0290 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */; };
 		3FAB7E8A18FCEA05001F0290 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8918FCEA05001F0290 /* UIKit.framework */; };
@@ -74,6 +76,10 @@
 		0B564DE518FDB46000A59821 /* CoordenadaVegetariano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordenadaVegetariano.m; sourceTree = "<group>"; };
 		0B564DE718FDB47100A59821 /* DateBaseCoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateBaseCoordenadaVegetariano.h; sourceTree = "<group>"; };
 		0B564DE818FDB47100A59821 /* DateBaseCoordenadaVegetariano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateBaseCoordenadaVegetariano.m; sourceTree = "<group>"; };
+		0BA579E0190984BB00FC5DAF /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
+		0BA579E1190984BB00FC5DAF /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
+		0BA579E3190994B800FC5DAF /* DataBaseReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseReceita.h; sourceTree = "<group>"; };
+		0BA579E4190994B800FC5DAF /* DataBaseReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseReceita.m; sourceTree = "<group>"; };
 		3FAB7E8218FCEA05001F0290 /* iVegetables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVegetables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAB7E8518FCEA05001F0290 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,6 +205,10 @@
 				0B3D327B18FF1CCD008B5D73 /* DateBaseNoticia.m */,
 				0B43C347190052340000103C /* AuxWebNoticia.h */,
 				0B43C348190052340000103C /* AuxWebNoticia.m */,
+				0BA579E3190994B800FC5DAF /* DataBaseReceita.h */,
+				0BA579E4190994B800FC5DAF /* DataBaseReceita.m */,
+				0BA579E0190984BB00FC5DAF /* Receita.h */,
+				0BA579E1190984BB00FC5DAF /* Receita.m */,
 			);
 			name = "Classes Basicas";
 			sourceTree = "<group>";
@@ -445,8 +455,10 @@
 				A8605ECD19083011000D9D23 /* DetalheRestauranteViewController.m in Sources */,
 				0B43C349190052340000103C /* AuxWebNoticia.m in Sources */,
 				3FAB7E9218FCEA05001F0290 /* main.m in Sources */,
+				0BA579E5190994B800FC5DAF /* DataBaseReceita.m in Sources */,
 				0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */,
 				A8605ED11908573B000D9D23 /* DetalheCozinhaViewController.m in Sources */,
+				0BA579E2190984BB00FC5DAF /* Receita.m in Sources */,
 				0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */,
 				0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */,
 				0B3D326A18FEFB77008B5D73 /* ContainerViewController.m in Sources */,
