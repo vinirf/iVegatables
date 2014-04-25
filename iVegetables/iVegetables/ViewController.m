@@ -180,40 +180,14 @@
         NSError *error2;
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:returnData2 options:0 error:&error2];
         NSString *linkImagem;
-        
-<<<<<<< HEAD
-        [[DateBaseCoordenadaVegetariano sharedManager]AddCoordenada:coordVeg];
-        
-        NSLog(@"V = %@",nome);
-        NSLog(@"V = %@",contato);
-        NSLog(@"V = %@",rua);
-        NSLog(@"V = %@",ruaCoom);
-        NSLog(@"V = %@",latitude);
-        NSLog(@"V = %@",longitude);
-        NSLog(@"V = %@",distancia);
-        NSLog(@"V = %@",cep);
-        NSLog(@"V = %@",SiglaPais);
-        NSLog(@"V = %@",cidade);
-        NSLog(@"V = %@",estado);
-        NSLog(@"V = %@",pais);
-        NSLog(@"V = %@",site);
-        NSLog(@"V = %@",numeroCheck);
-        NSLog(@"V = %@",totalFreq);
-        NSLog(@"V = %@",estadoPreco);
-        NSLog(@"V = %@",precoValor);
-        NSLog(@"nota = %@",raking);
-        NSLog(@"V = %@",horarioFunc);
-        NSLog(@"V = %@",nomeComentario);
-        NSLog(@"V = %@",nome2Comentario);
-        NSLog(@"V = %@",comentario);
-=======
+                                   
         for(int i=0;i<1;i++){
             NSDictionary *title = [[json valueForKeyPath:@"response.photos.items"] objectAtIndex:i];
             NSString *sufixo = [title valueForKeyPath:@"suffix"];
             NSString *prefixo = @"https://irs0.4sqi.net/img/general/800x500";
             linkImagem = [NSString stringWithFormat:@"%@%@",prefixo,sufixo];
         }
->>>>>>> origin/Emerson
+
         
         coordVeg.linkImagem = linkImagem;
         
@@ -291,17 +265,16 @@
      CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
     
     UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-    recipeImageView.image = [UIImage imageNamed:@"greenPin.jpg"];
+    recipeImageView.image = [UIImage imageNamed:@"pino.png"];
     
     //Notas
     UIImageView *alface1 = (UIImageView *)[cell viewWithTag: 1];
     UIImageView *alface2 = (UIImageView *)[cell viewWithTag: 2];
     UIImageView *alface3 = (UIImageView *)[cell viewWithTag: 3];
     UIImageView *alface4 = (UIImageView *)[cell viewWithTag: 4];
-    UIImageView *alface5 = (UIImageView *)[cell viewWithTag: 5];
     
-//    NSLog(@"qtd estrelas %i", [recipe.qtEstadoPreco integerValue]);
-//     NSLog(@"qtd  %@", recipe.qtEstadoPreco);
+    NSLog(@"qtd estrelas %i", [recipe.qtEstadoPreco integerValue]);
+     NSLog(@"qtd  %@", recipe.qtEstadoPreco);
     
     switch ([recipe.qtEstadoPreco integerValue]) {
         case 1:
@@ -321,13 +294,6 @@
             alface2.alpha = 1;
             alface3.alpha = 1;
             alface4.alpha = 1;
-            break;
-        case 5:
-            alface1.alpha = 1;
-            alface2.alpha = 1;
-            alface3.alpha = 1;
-            alface4.alpha = 1;
-            alface5.alpha = 1;
             break;
             
         default:
