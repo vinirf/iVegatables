@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "CoordenadaVegetariano.h"
 #import "DateBaseCoordenadaVegetariano.h"
+#import "AuxCoordenadaVegetariano.h"
+
 
 
 #define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
@@ -134,6 +136,7 @@
     
         NSString *horarioFunc  =[r valueForKeyPath:@"hours.status"];
         //NSString *icone  =[r valueForKeyPath:@"hours.status"];
+        NSString *idVenue = [r valueForKey:@"id"];
         
         NSDictionary *tl = [[title valueForKeyPath:@"tips"] objectAtIndex:i];
         NSString *nomeComentario = [[tl valueForKeyPath:@"user.firstName"]objectAtIndex:0];
@@ -163,6 +166,7 @@
         NSString *nomeUsuarioCompleto = [NSString stringWithFormat:@"%@%@%@",nomeComentario,@" ",nome2Comentario];
         coordVeg.nomeUsuario = nomeUsuarioCompleto;
         coordVeg.comentario = comentario;
+        coordVeg.idVenue = idVenue;
         
         CLLocationCoordinate2D localizacao;
         localizacao.latitude = coordVeg.pontoLatitude;
@@ -170,7 +174,14 @@
         coordVeg.coordinate = localizacao;
         coordVeg.title = nome;
         
+        NSString *thePath2 = [NSString stringWithFormat:@"%@%@%@",@"https://api.foursquare.com/v2/venues/",idVenue,@"/photos?oauth_token=GC5DHRXHPZNDP4STCZGUGZLP1QOXNRRZXMBSJSZVJKIRT15Y&v=20140425&limit=2"];
+        NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:thePath2]];
+        NSData *returnData2 = [NSURLConnection sendSynchronousRequest:request2 returningResponse:nil error:nil];
+        NSError *error2;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:returnData2 options:0 error:&error2];
+        NSString *linkImagem;
         
+<<<<<<< HEAD
         [[DateBaseCoordenadaVegetariano sharedManager]AddCoordenada:coordVeg];
         
         NSLog(@"V = %@",nome);
@@ -195,11 +206,20 @@
         NSLog(@"V = %@",nomeComentario);
         NSLog(@"V = %@",nome2Comentario);
         NSLog(@"V = %@",comentario);
+=======
+        for(int i=0;i<1;i++){
+            NSDictionary *title = [[json valueForKeyPath:@"response.photos.items"] objectAtIndex:i];
+            NSString *sufixo = [title valueForKeyPath:@"suffix"];
+            NSString *prefixo = @"https://irs0.4sqi.net/img/general/800x500";
+            linkImagem = [NSString stringWithFormat:@"%@%@",prefixo,sufixo];
+        }
+>>>>>>> origin/Emerson
         
-        NSLog(@"\n\n");
-
+        coordVeg.linkImagem = linkImagem;
         
+        [[DateBaseCoordenadaVegetariano sharedManager]AddCoordenada:coordVeg];
         
+        NSLog(@"valores = %@",coordVeg.qtEstadoPreco);
         
     }
     
@@ -273,6 +293,49 @@
     UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
     recipeImageView.image = [UIImage imageNamed:@"greenPin.jpg"];
     
+    //Notas
+    UIImageView *alface1 = (UIImageView *)[cell viewWithTag: 1];
+    UIImageView *alface2 = (UIImageView *)[cell viewWithTag: 2];
+    UIImageView *alface3 = (UIImageView *)[cell viewWithTag: 3];
+    UIImageView *alface4 = (UIImageView *)[cell viewWithTag: 4];
+    UIImageView *alface5 = (UIImageView *)[cell viewWithTag: 5];
+    
+//    NSLog(@"qtd estrelas %i", [recipe.qtEstadoPreco integerValue]);
+//     NSLog(@"qtd  %@", recipe.qtEstadoPreco);
+    
+    switch ([recipe.qtEstadoPreco integerValue]) {
+        case 1:
+            alface1.alpha = 1;
+            break;
+        case 2:
+            alface1.alpha = 1;
+            alface2.alpha = 1;
+            break;
+        case 3:
+            alface1.alpha = 1;
+            alface2.alpha = 1;
+            alface3.alpha = 1;
+            break;
+        case 4:
+            alface1.alpha = 1;
+            alface2.alpha = 1;
+            alface3.alpha = 1;
+            alface4.alpha = 1;
+            break;
+        case 5:
+            alface1.alpha = 1;
+            alface2.alpha = 1;
+            alface3.alpha = 1;
+            alface4.alpha = 1;
+            alface5.alpha = 1;
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
     UILabel *recipeNameLabel = (UILabel *)[cell viewWithTag:101];
     recipeNameLabel.text = recipe.nomeLugar;
     
@@ -287,9 +350,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
-    
-    
+    CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager] listaCoordenadasVegetarianos] objectAtIndex: [indexPath row]];
+    [AuxCoordenadaVegetariano sharedManager].coordenada = recipe;
+    NSLog(@"guardou info restaurante");
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -297,7 +360,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 130.0;
+    return 145;
 }
 
 @end

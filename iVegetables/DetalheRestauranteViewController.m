@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Vinicius Resende Fialho. All rights reserved.
 //
 
+
 #import "DetalheRestauranteViewController.h"
+#import "AuxCoordenadaVegetariano.h"
 
 @interface DetalheRestauranteViewController ()
 
@@ -23,14 +25,26 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.coordenadaShared = [AuxCoordenadaVegetariano sharedManager].coordenada;
+   
+    NSURL *url = [NSURL URLWithString:self.coordenadaShared.linkImagem];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    self.imgLugar.image = img;
+    
+    self.lblNota.text = [NSString stringWithFormat:@"%.1f", [self.coordenadaShared.nota doubleValue]];
+    self.lblNome.text = self.coordenadaShared.nomeLugar;
+    self.lblRua.text = self.coordenadaShared.rua;
+    self.lblTelefone.text = self.coordenadaShared.telefone;
+    self.lblSite.text = self.coordenadaShared.site;
+    self.lblDistancia.text = [NSString stringWithFormat:@"Distância até o local %@ metros", self.coordenadaShared.distancia];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

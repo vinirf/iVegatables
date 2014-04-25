@@ -35,6 +35,8 @@
 @property NSString *comentario;
 @property NSString *icone;
 @property NSString *horarioFuncionamento;
+@property NSString *idVenue;
+@property NSString *linkImagem;
 
 
 @end

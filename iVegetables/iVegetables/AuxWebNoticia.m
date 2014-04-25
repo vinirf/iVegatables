@@ -13,7 +13,7 @@
 +(AuxWebNoticia*)sharedManager{
     static AuxWebNoticia *unicoDataCoord = nil;
     if(!unicoDataCoord){
-        unicoDataCoord = [[super allocWithZone:nil]init];
+        unicoDataCoord = [[super allocWithZone: nil]init];
     }
     return unicoDataCoord;
 }
