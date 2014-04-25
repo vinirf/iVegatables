@@ -41,6 +41,7 @@
 		A8605ECA19082F5E000D9D23 /* iconeRestaurantes.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC919082F5E000D9D23 /* iconeRestaurantes.png */; };
 		A8605ECD19083011000D9D23 /* DetalheRestauranteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8605ECC19083011000D9D23 /* DetalheRestauranteViewController.m */; };
 		A8605ED11908573B000D9D23 /* DetalheCozinhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8605ED01908573B000D9D23 /* DetalheCozinhaViewController.m */; };
+		A8CA34B3190AF21300C497B6 /* iconeAlface.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CA34B2190AF21300C497B6 /* iconeAlface.png */; };
 		A8ED003D190984F7009D96D1 /* AuxCoordenadaVegetariano.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED003C190984F7009D96D1 /* AuxCoordenadaVegetariano.m */; };
 		A8ED004119098C16009D96D1 /* iconeCursor.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED003E19098C16009D96D1 /* iconeCursor.png */; };
 		A8ED004219098C16009D96D1 /* iconeTelefone.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED003F19098C16009D96D1 /* iconeTelefone.png */; };
@@ -110,6 +111,7 @@
 		A8605ECC19083011000D9D23 /* DetalheRestauranteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheRestauranteViewController.m; sourceTree = "<group>"; };
 		A8605ECF1908573B000D9D23 /* DetalheCozinhaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetalheCozinhaViewController.h; path = iVegetables/DetalheCozinhaViewController.h; sourceTree = "<group>"; };
 		A8605ED01908573B000D9D23 /* DetalheCozinhaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetalheCozinhaViewController.m; path = iVegetables/DetalheCozinhaViewController.m; sourceTree = "<group>"; };
+		A8CA34B2190AF21300C497B6 /* iconeAlface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeAlface.png; sourceTree = "<group>"; };
 		A8ED003B190984F7009D96D1 /* AuxCoordenadaVegetariano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuxCoordenadaVegetariano.h; sourceTree = "<group>"; };
 		A8ED003C190984F7009D96D1 /* AuxCoordenadaVegetariano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuxCoordenadaVegetariano.m; sourceTree = "<group>"; };
 		A8ED003E19098C16009D96D1 /* iconeCursor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeCursor.png; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		3FB7B23618FE54A800468BAB /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				A8CA34B2190AF21300C497B6 /* iconeAlface.png */,
 				A8ED003E19098C16009D96D1 /* iconeCursor.png */,
 				A8ED003F19098C16009D96D1 /* iconeTelefone.png */,
 				A8ED004019098C16009D96D1 /* iconeEndereco.png */,
@@ -428,6 +431,7 @@
 				A8605EC819082E91000D9D23 /* pino.png in Resources */,
 				3FAB7E9E18FCEA05001F0290 /* Images.xcassets in Resources */,
 				3FAB7E9018FCEA05001F0290 /* InfoPlist.strings in Resources */,
+				A8CA34B3190AF21300C497B6 /* iconeAlface.png in Resources */,
 				A8605EC519082E91000D9D23 /* iconeCozinha.png in Resources */,
 				A8ED004319098C16009D96D1 /* iconeEndereco.png in Resources */,
 				A8605ECA19082F5E000D9D23 /* iconeRestaurantes.png in Resources */,

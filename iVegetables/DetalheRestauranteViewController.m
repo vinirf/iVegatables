@@ -29,11 +29,17 @@
     [super viewDidLoad];
     self.coordenadaShared = [AuxCoordenadaVegetariano sharedManager].coordenada;
    
+    NSURL *url = [NSURL URLWithString:self.coordenadaShared.linkImagem];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    self.imgLugar.image = img;
+    
     self.lblNota.text = [NSString stringWithFormat:@"%.1f", [self.coordenadaShared.nota doubleValue]];
     self.lblNome.text = self.coordenadaShared.nomeLugar;
     self.lblRua.text = self.coordenadaShared.rua;
     self.lblTelefone.text = self.coordenadaShared.telefone;
     self.lblSite.text = self.coordenadaShared.site;
+    self.lblDistancia.text = [NSString stringWithFormat:@"Distância até o local %@ metros", self.coordenadaShared.distancia];
     
     
 }

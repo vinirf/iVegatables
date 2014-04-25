@@ -18,8 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblNome;
 @property (weak, nonatomic) IBOutlet UILabel *lblRua;
 @property (weak, nonatomic) IBOutlet UILabel *lblTelefone;
-
 @property (weak, nonatomic) IBOutlet UILabel *lblSite;
+@property (weak, nonatomic) IBOutlet UILabel *lblDistancia;
+@property (weak, nonatomic) IBOutlet UIImageView *imgLugar;
 
 
 @end
