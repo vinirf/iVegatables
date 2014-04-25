@@ -98,8 +98,6 @@
     NSLog(@"lat %f",latitude);
     NSLog(@" long %f",longitude);
     
-    //https://api.foursquare.com/v2/venues/search?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=-23.657196,-46.751254&query=vegetariano&limit=1
-    
     NSString *thePath = [NSString stringWithFormat:@"%@%f%@%f%@%@%@%d",@"https://api.foursquare.com/v2/venues/explore?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=",latitude,@",",longitude,@"&query=",termoPesquisa,@"&limit=",qtdPesquisa];
     
 //    NSString *thePath = @"https://api.foursquare.com/v2/venues/explore?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=-23.657196,-46.751254&query=vegetariano&limit=30";
