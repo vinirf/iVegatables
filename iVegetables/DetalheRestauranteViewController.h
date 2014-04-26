@@ -9,8 +9,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CoordenadaVegetariano.h"
+#import <MapKit/MapKit.h>
 
-@interface DetalheRestauranteViewController : UIViewController
+@interface DetalheRestauranteViewController : UIViewController <MKMapViewDelegate>
 
 @property CoordenadaVegetariano *coordenadaShared;
 
@@ -21,7 +22,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTelefone;
 @property (weak, nonatomic) IBOutlet UILabel *lblSite;
 @property (weak, nonatomic) IBOutlet UILabel *lblDistancia;
+@property (weak, nonatomic) IBOutlet UILabel *lblRuaComplemento;
+@property (weak, nonatomic) IBOutlet UILabel *lblDescricaoLugar;
+@property (weak, nonatomic) IBOutlet UILabel *lblNumeroCheck;
+@property (weak, nonatomic) IBOutlet UILabel *lblFreq;
+@property (weak, nonatomic) IBOutlet UILabel *lblComentario;
+@property (weak, nonatomic) IBOutlet UILabel *lblAutor;
+@property (weak, nonatomic) IBOutlet UILabel *lblEstadoPreco;
 
 
+@property (weak, nonatomic) IBOutlet MKMapView *mapaDetalhes;
 
 @end

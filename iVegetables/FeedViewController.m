@@ -46,15 +46,14 @@
 
 -(void)serializaTodasAsPaginasSite{
     
-     NSString* sitePag1 = @"http://www.revistavegetarianos.com.br/category/noticias/";
-     [self serializarDados:sitePag1];
-    
-    NSString* sitePag2 = @"http://www.revistavegetarianos.com.br/category/noticias/page/2/";
-    [self serializarDados:sitePag2];
-    
-    
-    NSString* sitePag3 = @"http://www.revistavegetarianos.com.br/category/noticias/page/3/";
-    [self serializarDados:sitePag3];
+//     NSString* sitePag1 = @"http://www.revistavegetarianos.com.br/category/noticias/";
+//     [self serializarDados:sitePag1];
+//    
+//    NSString* sitePag2 = @"http://www.revistavegetarianos.com.br/category/noticias/page/2/";
+//    [self serializarDados:sitePag2];
+//    
+//    NSString* sitePag3 = @"http://www.revistavegetarianos.com.br/category/noticias/page/3/";
+//    [self serializarDados:sitePag3];
     
     
 }

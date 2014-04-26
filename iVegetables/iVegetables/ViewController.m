@@ -193,7 +193,6 @@
         
         [[DateBaseCoordenadaVegetariano sharedManager]AddCoordenada:coordVeg];
         
-        NSLog(@"valores = %@",coordVeg.qtEstadoPreco);
         
     }
     
@@ -239,19 +238,6 @@
 
 //Preeche a tabela de rotas
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-//    if(!cell){
-//        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"UITableViewCell"];
-//    }
-//    
-//    CoordenadaVegetariano *p = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
-//    [[cell textLabel] setFont:[UIFont systemFontOfSize:20.0]];
-//    NSString *conc = [NSString stringWithFormat:@"%@,%@", [p nomeLugar], [p rua]];
-//    [[cell textLabel]setText:conc];
-//    //cell.imageView.image = [UIImage imageNamed:@"routes.png"];
-//    
-//    return cell;
     
     NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -272,9 +258,6 @@
     UIImageView *alface2 = (UIImageView *)[cell viewWithTag: 2];
     UIImageView *alface3 = (UIImageView *)[cell viewWithTag: 3];
     UIImageView *alface4 = (UIImageView *)[cell viewWithTag: 4];
-    
-    NSLog(@"qtd estrelas %i", [recipe.qtEstadoPreco integerValue]);
-     NSLog(@"qtd  %@", recipe.qtEstadoPreco);
     
     switch ([recipe.qtEstadoPreco integerValue]) {
         case 1:
@@ -309,7 +292,24 @@
     recipeRuaLabel.text = recipe.rua;
     
     UILabel *recipeTelefoneLabel = (UILabel *)[cell viewWithTag:103];
-    recipeTelefoneLabel.text = recipe.telefone;
+    if(recipe.telefone == NULL) recipeTelefoneLabel.text = @"Sem Telefone";
+    else recipeTelefoneLabel.text = recipe.telefone;
+    
+    UILabel *recipeNotaLabel = (UILabel *)[cell viewWithTag:106];
+    if([recipe.nota doubleValue] == 0){
+        recipeNotaLabel.text = @"-";
+    }else{
+        NSString *not = [NSString stringWithFormat:@"%.1f", [recipe.nota doubleValue]];
+        recipeNotaLabel.text = not;
+    }
+    
+    UILabel *recipeEstadoPrecoLabel = (UILabel *)[cell viewWithTag:104];
+    NSString *estadoPreco = [NSString stringWithFormat:@"%@%@",@"Preco: ",recipe.estadoPreco];
+    recipeEstadoPrecoLabel.text = estadoPreco;
+    
+    UILabel *recipeDistanciaLabel = (UILabel *)[cell viewWithTag:105];
+    NSString *distancia = [NSString stringWithFormat:@"Distância até esse local é de %0.2f Km", [recipe.distancia floatValue]/1000];
+    recipeDistanciaLabel.text = distancia;
     
     return cell;
 }
@@ -326,7 +326,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 145;
+    return 180;
 }
 
 @end
