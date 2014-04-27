@@ -13,5 +13,6 @@
 +(AuxWebNoticia*)sharedManager;
 
 @property NSString *link;
+@property NSString *linkReceita;
 
 @end

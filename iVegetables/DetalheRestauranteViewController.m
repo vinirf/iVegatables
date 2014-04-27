@@ -37,20 +37,30 @@
     UIImage *img = [[UIImage alloc] initWithData:data];
     self.imgLugar.image = img;
     
-    self.lblNota.text = [NSString stringWithFormat:@"%.1f", [self.coordenadaShared.nota doubleValue]];
+    if(self.coordenadaShared.nota == 0) self.lblNota.text = @"-";
+    else self.lblNota.text = [NSString stringWithFormat:@"%.1f", [self.coordenadaShared.nota doubleValue]];
+    
     self.lblNome.text = self.coordenadaShared.nomeLugar;
     self.lblRua.text = self.coordenadaShared.rua;
-    self.lblTelefone.text = self.coordenadaShared.telefone;
-    self.lblSite.text = self.coordenadaShared.site;
-    self.lblRuaComplemento.text = self.coordenadaShared.ruaComplemento;
-    self.lblDistancia.text = [NSString stringWithFormat:@"Distância até o local %0.2f Km", [self.coordenadaShared.distancia floatValue]/1000];
+    
+    self.lblDistancia.text = [NSString stringWithFormat:@"%0.2f", [self.coordenadaShared.distancia floatValue]/1000];
     self.lblComentario.text = self.coordenadaShared.comentario;
     self.lblAutor.text = self.coordenadaShared.nomeUsuario;
     self.lblEstadoPreco.text = self.coordenadaShared.estadoPreco;
     
-    //self.lblNumeroCheck.text = self.coordenadaShared.numeroChecking;
-    //self.lblFreq.text = self.coordenadaShared.totalFrequentadores;
+    if(self.coordenadaShared.telefone == NULL) self.lblTelefone.text = @"Sem Telefone";
+    else self.lblTelefone.text = self.coordenadaShared.telefone;
     
+    if(self.coordenadaShared.horarioFuncionamento == NULL) self.lblHorario.text = @"Sem Horario";
+    else  self.lblHorario.text = self.coordenadaShared.horarioFuncionamento;
+    
+    if(self.coordenadaShared.site == NULL) self.lblSite.text = @"Sem Site";
+    else self.lblSite.text = self.coordenadaShared.site;
+    
+    if(self.coordenadaShared.ruaComplemento == NULL) self.lblRuaComplemento.text = @"Sem Complemento";
+    else self.lblRuaComplemento.text = self.coordenadaShared.ruaComplemento;
+    
+
     NSString *descricaoEndereco = [NSString stringWithFormat:@"%@ - %@, %@",self.coordenadaShared.cidade,self.coordenadaShared.estado,self.coordenadaShared.cep];
     self.lblDescricaoLugar.text = descricaoEndereco;
     
@@ -61,7 +71,6 @@
     UIImageView *alface3 = (UIImageView *)[self.view viewWithTag: 3];
     UIImageView *alface4 = (UIImageView *)[self.view viewWithTag: 4];
     
-   
     
     switch ([self.coordenadaShared.qtEstadoPreco integerValue]) {
         case 1:

@@ -10,4 +10,10 @@
 
 @interface DetalheCozinhaViewController : UIViewController <UIWebViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *lblTempoPreparo;
+@property (weak, nonatomic) IBOutlet UILabel *lblCozimento;
+@property (weak, nonatomic) IBOutlet UILabel *lblRendimento;
+@property (weak, nonatomic) IBOutlet UILabel *lblDificuldade;
+
+
 @end

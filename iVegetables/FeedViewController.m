@@ -19,22 +19,12 @@
 
 @implementation FeedViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButton];
-    
     [self serializaTodasAsPaginasSite];
 }
 
@@ -46,64 +36,15 @@
 
 -(void)serializaTodasAsPaginasSite{
     
-//     NSString* sitePag1 = @"http://www.revistavegetarianos.com.br/category/noticias/";
-//     [self serializarDados:sitePag1];
-//    
-//    NSString* sitePag2 = @"http://www.revistavegetarianos.com.br/category/noticias/page/2/";
-//    [self serializarDados:sitePag2];
-//    
-//    NSString* sitePag3 = @"http://www.revistavegetarianos.com.br/category/noticias/page/3/";
-//    [self serializarDados:sitePag3];
-    
+     NSString* sitePag1 = @"http://www.revistavegetarianos.com.br/category/noticias/";
+     [self serializarDados:sitePag1];
+
+     NSString* sitePag2 = @"http://www.revistavegetarianos.com.br/category/noticias/page/2/";
+     [self serializarDados:sitePag2];
     
 }
 
--(void)serializarDadosDoLink: (NSString*)siteLink {
-    NSString* url = @"http://www.revistavegetarianos.com.br/noticias/superbom-apresenta-produtos-com-descontos-especiais-para-os-consumidores/";
-    NSURL* query = [NSURL URLWithString:url];
-    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
-    
-    NSString *string=result;
-    NSRange searchFromRange = [string rangeOfString:@"single-post-wrap"];
-    NSRange searchToRange = [string rangeOfString:@"ad fullbanner"];
-    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
-    
-    NSString *stringFinal = substring;
-    
-        
-    Noticia *news = [[Noticia alloc]init];
-    
-    
-    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
-    news.cabecelhoImagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
-    
-    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<p>"].location+3];
-    NSString *text1 = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</p>"].location-3];
-    //NSLog(@"str %@",text1);
-    
-        
-//    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
-//    news.imagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
-//        
-//    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@" title=\""].location+18];
-//    news.titulo = [stringFinal substringToIndex:[stringFinal rangeOfString:@"<span"].location-2];
-//        
-//    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b>"].location+3];
-//    news.data = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location];
-    
-        
-        //Entra dentro link
-        
-        
-        
-        //[[DateBaseNoticia sharedManager]AddNoticia:news];
-        
 
-       // NSLog(@"\n");
-    
-
-    [[self newsTable]reloadData];
-}
 
 -(void)serializarDados : (NSString*)siteLink{
 
@@ -141,10 +82,6 @@
         
         
         news.link = [NSString stringWithFormat:@"%@%@",@"http://",caminhoUrl];
-
-        
-        //Entra dentro link
-        [self serializarDadosDoLink:news.link];
         
 
         [[DateBaseNoticia sharedManager]AddNoticia:news];

@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblComentario;
 @property (weak, nonatomic) IBOutlet UILabel *lblAutor;
 @property (weak, nonatomic) IBOutlet UILabel *lblEstadoPreco;
+@property (weak, nonatomic) IBOutlet UILabel *lblHorario;
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapaDetalhes;

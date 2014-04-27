@@ -9,6 +9,7 @@
 #import "KitchenViewController.h"
 #import "Receita.h"
 #import "DataBaseReceita.h"
+#import "AuxWebNoticia.h"
 
 
 @interface KitchenViewController ()
@@ -32,8 +33,6 @@
 {
     [super viewDidLoad];
     [self parseReceitasHtml];
-    [self pegaDadosDaReceita];
-    [self pegaFotoReceita];
     // Do any additional setup after loading the view.
 }
 
@@ -57,8 +56,7 @@
     NSRange searchFromRange = [string rangeOfString:@"main-container"];
     NSRange searchToRange = [string rangeOfString:@"container footer"];
     NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
-    
-   // NSLog(@"dfsdfsdf %@",substring);
+
     
     NSString *stringFinal = substring;
     
@@ -71,7 +69,7 @@
         stringFinal = [stringFinal substringFromIndex:continua.location];
     
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"fancyframe_ detailcursor"].location+33];
-        NSString *caminhoUrl = [stringFinal substringToIndex:[stringFinal rangeOfString:@"title"].location-1];
+        NSString *caminhoUrl = [stringFinal substringToIndex:[stringFinal rangeOfString:@"title"].location-2];
         rect.subLink = caminhoUrl;
         
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<img src="].location+10];
@@ -90,50 +88,6 @@
     }
     
     continua = [stringFinal rangeOfString:@"class=\"span3 galery\""];
-    
-}
-
--(void)pegaFotoReceita{
-    
-    NSString *linkBusca = @"http://www.menuvegano.com.br/article/show/894/feijao-tropeiro";
-    NSURL* query = [NSURL URLWithString:linkBusca];
-    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
-    
-    result = [result substringFromIndex:[result rangeOfString:@"auto image-single span6"].location+87];
-    NSString *caminhoUrl = [result substringToIndex:[result rangeOfString:@"data-src="].location-3];
-    NSLog(@"image = %@",caminhoUrl);
-    
-    
-}
-
--(void)pegaDadosDaReceita{
-    
-    NSString *linkBusca = @"http://www.menuvegano.com.br/article/show/894/feijao-tropeiro";
-    
-    NSURL* query = [NSURL URLWithString:linkBusca];
-    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
-    
-    NSString *string=result;
-    NSRange searchFromRange = [string rangeOfString:@"recipe-labels"];
-    NSRange searchToRange = [string rangeOfString:@"height:50px;border-bottom:none"];
-    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
-    
-    //NSLog(@"dfsdfsdf %@",substring);
-    
-    NSString *stringFinal = substring;
-    
-    NSRange continua =[stringFinal rangeOfString:@"<li>"];
-    
-    while(continua.location != NSNotFound){
-
-        stringFinal = [stringFinal substringFromIndex:continua.location];
-        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"</span>"].location+8];
-        NSString *caminhoUrl = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</li>"].location];
-        
-        continua = [stringFinal rangeOfString:@"<li>"];
-        
-        
-    }
     
     
 }
@@ -166,8 +120,6 @@
     
     NSURL *url = [NSURL URLWithString:[recipe imagem]];
     
-    NSLog(@"string %@",recipe.imagem);
-    
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc] initWithData:data ];
     
@@ -189,11 +141,9 @@
     return 160.0;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    Noticia *recipe = [[[DateBaseNoticia sharedManager]listaNoticias] objectAtIndex:[indexPath row]];
-//    [AuxWebNoticia sharedManager].link = [recipe link];
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Receita *recipe = [[[DataBaseReceita sharedManager]listaReceitas] objectAtIndex:[indexPath row]];
+    [AuxWebNoticia sharedManager].linkReceita = [recipe subLink];
 }
 
 
