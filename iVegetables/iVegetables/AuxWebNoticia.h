@@ -15,4 +15,7 @@
 @property NSString *link;
 @property NSString *linkReceita;
 
+@property BOOL estadoRepetirViewFeed;
+@property BOOL estadoRepetirViewRestaurante;
+
 @end

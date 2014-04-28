@@ -21,7 +21,8 @@
 -(id)init{
     self = [super init];
     if(self){
-              
+        self.estadoRepetirViewFeed = YES;
+        self.estadoRepetirViewRestaurante = YES;
     }
     return self;
 }

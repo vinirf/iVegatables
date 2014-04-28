@@ -14,6 +14,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *newsTable;
-
+@property BOOL estadoRepetir;
 
 @end

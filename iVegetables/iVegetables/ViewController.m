@@ -10,6 +10,7 @@
 #import "CoordenadaVegetariano.h"
 #import "DateBaseCoordenadaVegetariano.h"
 #import "AuxCoordenadaVegetariano.h"
+#import "AuxWebNoticia.h"
 
 
 
@@ -24,7 +25,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
     
     [self.mapVegetables setDelegate:self];
     

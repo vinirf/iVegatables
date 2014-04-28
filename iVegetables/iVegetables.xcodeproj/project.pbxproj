@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1A5EA9190EE19100C1B5DE /* panela.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EA8190EE19100C1B5DE /* panela.jpg */; };
+		0B1A5EAB190EE3E000C1B5DE /* bloco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EAA190EE3E000C1B5DE /* bloco.jpg */; };
+		0B1A5EAD190EEF7600C1B5DE /* mais.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EAC190EEF7600C1B5DE /* mais.png */; };
+		0B1A5EAF190EF69400C1B5DE /* colher.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EAE190EF69400C1B5DE /* colher.png */; };
 		0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326318FEF787008B5D73 /* BarraViewController.m */; };
 		0B3D326718FEF905008B5D73 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326618FEF905008B5D73 /* FeedViewController.m */; };
 		0B3D326A18FEFB77008B5D73 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326918FEFB77008B5D73 /* ContainerViewController.m */; };
@@ -62,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1A5EA8190EE19100C1B5DE /* panela.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panela.jpg; sourceTree = "<group>"; };
+		0B1A5EAA190EE3E000C1B5DE /* bloco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bloco.jpg; sourceTree = "<group>"; };
+		0B1A5EAC190EEF7600C1B5DE /* mais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mais.png; sourceTree = "<group>"; };
+		0B1A5EAE190EF69400C1B5DE /* colher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colher.png; sourceTree = "<group>"; };
 		0B3D326218FEF787008B5D73 /* BarraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarraViewController.h; path = ../BarraViewController.h; sourceTree = "<group>"; };
 		0B3D326318FEF787008B5D73 /* BarraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarraViewController.m; path = ../BarraViewController.m; sourceTree = "<group>"; };
 		0B3D326518FEF905008B5D73 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -329,7 +337,11 @@
 			isa = PBXGroup;
 			children = (
 				0BB60DE9190AFE5D000E87E1 /* iconeAlface.png */,
+				0B1A5EAA190EE3E000C1B5DE /* bloco.jpg */,
+				0B1A5EAC190EEF7600C1B5DE /* mais.png */,
 				3FE00BF3190C6F5400B13578 /* iconeRelogio.png */,
+				0B1A5EAE190EF69400C1B5DE /* colher.png */,
+				0B1A5EA8190EE19100C1B5DE /* panela.jpg */,
 				0BB60DEA190AFE5D000E87E1 /* iconeCursor.png */,
 				0BB60DEB190AFE5D000E87E1 /* iconeEndereco.png */,
 				3F1BDF17190C75F0001A151F /* circulo.png */,
@@ -438,16 +450,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1A5EA9190EE19100C1B5DE /* panela.jpg in Resources */,
 				A8605EC419082E91000D9D23 /* backgroundVerde.jpg in Resources */,
 				0BB60DEE190AFE5D000E87E1 /* iconeCursor.png in Resources */,
 				A8605EC819082E91000D9D23 /* pino.png in Resources */,
 				3FAB7E9E18FCEA05001F0290 /* Images.xcassets in Resources */,
 				3FAB7E9018FCEA05001F0290 /* InfoPlist.strings in Resources */,
+				0B1A5EAF190EF69400C1B5DE /* colher.png in Resources */,
 				A8605EC519082E91000D9D23 /* iconeCozinha.png in Resources */,
+				0B1A5EAB190EE3E000C1B5DE /* bloco.jpg in Resources */,
 				0BB60DF0190AFE5D000E87E1 /* iconeTelefone.png in Resources */,
 				A8605ECA19082F5E000D9D23 /* iconeRestaurantes.png in Resources */,
 				3FE00BF4190C6F5400B13578 /* iconeRelogio.png in Resources */,
 				0BB60DEF190AFE5D000E87E1 /* iconeEndereco.png in Resources */,
+				0B1A5EAD190EEF7600C1B5DE /* mais.png in Resources */,
 				A8605EC619082E91000D9D23 /* iconeNoticias.png in Resources */,
 				3F1BDF18190C75F0001A151F /* circulo.png in Resources */,
 				3FAB7E9918FCEA05001F0290 /* Main.storyboard in Resources */,

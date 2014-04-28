@@ -25,7 +25,12 @@
     [super viewDidLoad];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButton];
-    [self serializaTodasAsPaginasSite];
+    
+    if([AuxWebNoticia sharedManager].estadoRepetirViewFeed == YES){
+        [self serializaTodasAsPaginasSite];
+        [AuxWebNoticia sharedManager].estadoRepetirViewFeed = NO;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

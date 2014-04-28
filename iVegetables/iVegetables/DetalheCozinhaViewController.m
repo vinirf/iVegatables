@@ -17,28 +17,30 @@
 
 @implementation DetalheCozinhaViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.webInstrucoes.delegate = self;
+
     [self pegaFotoReceita];
     [self pegaDadosDaReceita];
     [self loadUIWebView];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 //Método do delegate de webview, impede que a webview abra novos links
@@ -66,7 +68,7 @@
     
     NSString *string=result;
     NSRange searchFromRange = [string rangeOfString:@"row span9 image-description show-description"];
-    NSRange searchToRange = [string rangeOfString:@"span9 credit"];
+    NSRange searchToRange = [string rangeOfString:@"<!-- 870 x 140 -->"];
     NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
     
     NSString *stringFinal = substring;
@@ -78,6 +80,7 @@
     if([stringFinal rangeOfString:@"span9 image-comments show-description"].location !=  NSNotFound){
          caminhoUrl = [stringFinal substringToIndex:[stringFinal rangeOfString:@"span9 image-comments show-description"].location-12];
     }else{
+        NSLog(@"diferete");
         caminhoUrl = [stringFinal substringToIndex:[stringFinal rangeOfString:@"span9 image-comments"].location-25];
     }
     

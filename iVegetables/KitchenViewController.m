@@ -32,8 +32,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.campBusca.delegate = self;
+    self.valorDeslocamento = 130;
+    self.auxStringBusca = 1;
     
-    //[self parseReceitasHtml];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+    singleTap.numberOfTapsRequired = 1;
+    self.imgColher.userInteractionEnabled = YES;
+    [self.imgColher addGestureRecognizer:singleTap];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,11 +161,90 @@
     Receita *recipe = [[[DataBaseReceita sharedManager]listaReceitas] objectAtIndex:[indexPath row]];
     [AuxWebNoticia sharedManager].linkReceita = [recipe subLink];
     NSLog(@"link = %@",recipe.subLink);
+    
 }
 
 
+
+
+-(void)tapDetected{
+    NSLog(@"single Tap on imageview");
+    //self.imgColher.transform = CGAffineTransformMakeRotation(M_PI/2);
+    [UIView animateWithDuration:2.0 delay:0 options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^(void){
+                self.imgColher.transform = CGAffineTransformMakeRotation(M_PI/2);
+     } completion:NULL
+     ];
+}
+
 - (IBAction)botaoPesquisar:(id)sender {
-    [self parseReceitasHtml];
+    //[DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
+    //[self parseReceitasHtml];
+    [self descerIngrediente];
+    self.campBusca.text = @"";
+}
+
+-(void)descerIngrediente{
+
+    fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 23, 80, 30)];
+    fromLabel.text = [self campBusca].text;;
+    fromLabel.backgroundColor = [UIColor clearColor];
+    fromLabel.textColor = [UIColor blackColor];
+    fromLabel.textAlignment = NSTextAlignmentCenter;
+    //fromLabel.numberOfLines = 3;
+    
+    imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 80, 80)];
+    imgView.image = [UIImage imageNamed:@"bloco.jpg"];
+    [imgView addSubview:fromLabel];
+    [self.view addSubview:imgView];
+
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        CGRect moveAviaoDecolar = CGRectMake(20, 250, 80, 80);
+        imgView.frame = moveAviaoDecolar;
+    }
+                     completion:^(BOOL finished){
+                         if(finished){
+                             CGRect moveAviaoDecolar = CGRectMake(20, 10, 80, 80);
+                             imgView.frame = moveAviaoDecolar;
+                             [imgView setHidden:TRUE];
+                             
+                             UIImageView *imgView2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.valorDeslocamento, 320, 60, 60)];
+                             imgView2.image = [UIImage imageNamed:@"bloco.jpg"];
+                             fromLabel.frame = CGRectMake(0, 15, 60, 30);
+                             [imgView2 addSubview:fromLabel];
+                             [self.view addSubview:imgView2];
+                             
+                             UIImageView *imgView3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.valorDeslocamento-17, 340, 15, 15)];
+                             imgView3.image = [UIImage imageNamed:@"mais.png"];
+                            
+                            [self.view addSubview:imgView3];
+                            [self.view addSubview:imgView2];
+                             
+                             self.valorDeslocamento = self.valorDeslocamento + 80;
+                             
+                             if(self.auxStringBusca == 1){
+                                 self.stringDeBusca = self.campBusca.text;
+                             }else{
+                                 self.stringDeBusca =  [NSString stringWithFormat:@"%@+%@",self.stringDeBusca,self.campBusca.text];
+                             }
+                             
+                             self.auxStringBusca +=1;
+                             
+                             NSLog(@"l = %@",self.stringDeBusca);
+                         }
+                     }];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField{
+   
+    //[DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
+    //[self parseReceitasHtml];
+    [self descerIngrediente];
+    [[self campBusca] resignFirstResponder];
+    self.campBusca.text = @"";
+    
+    return YES;
 }
 
 
