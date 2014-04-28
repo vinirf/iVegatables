@@ -32,8 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self parseReceitasHtml];
-    // Do any additional setup after loading the view.
+    
+    //[self parseReceitasHtml];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +46,16 @@
 
 -(void)parseReceitasHtml{
     
-    NSString *termoBusca = @"feijao";
+
+    NSString *termoBusca = self.campBusca.text;
+    NSData *data = [termoBusca dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    termoBusca = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    
+    NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@" "];
+    termoBusca = [[termoBusca componentsSeparatedByCharactersInSet: doNotWant] componentsJoinedByString:@"+"];
+    
+    NSLog(@"%@", termoBusca);
+    
     NSString *linkBusca = [NSString stringWithFormat:@"%@%@",@"http://www.menuvegano.com.br/article/search?q=",termoBusca];
     
     NSURL* query = [NSURL URLWithString:linkBusca];
@@ -84,11 +93,10 @@
         
         continua = [stringFinal rangeOfString:@"class=\"span3 galery\""];
         
-        
     }
     
     continua = [stringFinal rangeOfString:@"class=\"span3 galery\""];
-    
+    [self.listRceitas reloadData];
     
 }
 
@@ -144,8 +152,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Receita *recipe = [[[DataBaseReceita sharedManager]listaReceitas] objectAtIndex:[indexPath row]];
     [AuxWebNoticia sharedManager].linkReceita = [recipe subLink];
+    NSLog(@"link = %@",recipe.subLink);
 }
 
+
+- (IBAction)botaoPesquisar:(id)sender {
+    [self parseReceitasHtml];
+}
 
 
 @end

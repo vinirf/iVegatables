@@ -21,7 +21,7 @@
     self.webviewNews.delegate = self;
     
     [self loadUIWebView];
-    [self pegarDivNoticia];
+
 }
 
 - (void)didReceiveMemoryWarning{

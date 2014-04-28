@@ -356,8 +356,8 @@
 		A8605ED21908574A000D9D23 /* DetalhesCozinha */ = {
 			isa = PBXGroup;
 			children = (
-				A8605ED01908573B000D9D23 /* DetalheCozinhaViewController.m */,
 				A8605ECF1908573B000D9D23 /* DetalheCozinhaViewController.h */,
+				A8605ED01908573B000D9D23 /* DetalheCozinhaViewController.m */,
 			);
 			name = DetalhesCozinha;
 			sourceTree = "<group>";

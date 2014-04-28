@@ -10,9 +10,8 @@
 
 @interface KitchenViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIView *listaReceitas;
-
 @property (weak, nonatomic) IBOutlet UITextField *campBusca;
+- (IBAction)botaoPesquisar:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITableView *listRceitas;
 
