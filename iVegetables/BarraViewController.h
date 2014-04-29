@@ -13,6 +13,8 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UIView *viewInicial;
+
 
 @property (weak, nonatomic) IBOutlet UIView *containerViews;
 

@@ -38,7 +38,6 @@
         [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
     else if ([segue.identifier isEqualToString:SegueIdentifierThird]){
-        NSLog(@"entrou ");
         [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
 }

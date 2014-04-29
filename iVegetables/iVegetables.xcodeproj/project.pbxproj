@@ -35,6 +35,8 @@
 		3FAB5B19190F87C30013FC75 /* cozimento.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B15190F87C30013FC75 /* cozimento.png */; };
 		3FAB5B1A190F87C30013FC75 /* nivel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B16190F87C30013FC75 /* nivel.png */; };
 		3FAB5B1B190F87C30013FC75 /* pessoa.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B17190F87C30013FC75 /* pessoa.png */; };
+		3FAB5B1E190F8E910013FC75 /* InicialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB5B1D190F8E910013FC75 /* InicialViewController.m */; };
+		3FAB5B21190F93DB0013FC75 /* iconeEntrada.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B20190F93DB0013FC75 /* iconeEntrada.png */; };
 		3FAB7E8618FCEA05001F0290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8518FCEA05001F0290 /* Foundation.framework */; };
 		3FAB7E8818FCEA05001F0290 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */; };
 		3FAB7E8A18FCEA05001F0290 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8918FCEA05001F0290 /* UIKit.framework */; };
@@ -113,6 +115,9 @@
 		3FAB5B15190F87C30013FC75 /* cozimento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cozimento.png; sourceTree = "<group>"; };
 		3FAB5B16190F87C30013FC75 /* nivel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nivel.png; sourceTree = "<group>"; };
 		3FAB5B17190F87C30013FC75 /* pessoa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pessoa.png; sourceTree = "<group>"; };
+		3FAB5B1C190F8E910013FC75 /* InicialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InicialViewController.h; sourceTree = "<group>"; };
+		3FAB5B1D190F8E910013FC75 /* InicialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InicialViewController.m; sourceTree = "<group>"; };
+		3FAB5B20190F93DB0013FC75 /* iconeEntrada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeEntrada.png; sourceTree = "<group>"; };
 		3FAB7E8218FCEA05001F0290 /* iVegetables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVegetables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAB7E8518FCEA05001F0290 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -248,6 +253,15 @@
 			name = "Classes Basicas";
 			sourceTree = "<group>";
 		};
+		3FAB5B1F190F8E970013FC75 /* Inicial */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB5B1C190F8E910013FC75 /* InicialViewController.h */,
+				3FAB5B1D190F8E910013FC75 /* InicialViewController.m */,
+			);
+			name = Inicial;
+			sourceTree = "<group>";
+		};
 		3FAB7E7918FCEA05001F0290 = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +340,7 @@
 		3FAB7EBC18FCEDB6001F0290 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				3FAB5B1F190F8E970013FC75 /* Inicial */,
 				0B3D327618FF0C3D008B5D73 /* Container */,
 				0B3D327518FF0C29008B5D73 /* Barra */,
 				0B3D327318FF0B93008B5D73 /* Cozinha */,
@@ -348,6 +363,7 @@
 		3FB7B23618FE54A800468BAB /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				3FAB5B20190F93DB0013FC75 /* iconeEntrada.png */,
 				3FAB5B14190F87C30013FC75 /* clock.png */,
 				3FAB5B15190F87C30013FC75 /* cozimento.png */,
 				3FAB5B16190F87C30013FC75 /* nivel.png */,
@@ -470,6 +486,7 @@
 			files = (
 				A8605EC419082E91000D9D23 /* backgroundVerde.jpg in Resources */,
 				0BB60DEE190AFE5D000E87E1 /* iconeCursor.png in Resources */,
+				3FAB5B21190F93DB0013FC75 /* iconeEntrada.png in Resources */,
 				3FAB5B19190F87C30013FC75 /* cozimento.png in Resources */,
 				A8605EC819082E91000D9D23 /* pino.png in Resources */,
 				3FAB7E9E18FCEA05001F0290 /* Images.xcassets in Resources */,
@@ -524,6 +541,7 @@
 				0BA579E5190994B800FC5DAF /* DataBaseReceita.m in Sources */,
 				0B3D327018FF06E5008B5D73 /* KitchenViewController.m in Sources */,
 				A8605ED11908573B000D9D23 /* DetalheCozinhaViewController.m in Sources */,
+				3FAB5B1E190F8E910013FC75 /* InicialViewController.m in Sources */,
 				0BA579E2190984BB00FC5DAF /* Receita.m in Sources */,
 				0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */,
 				0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */,

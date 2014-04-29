@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVs-Ed-4ZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="-1943"/>
+            <point key="canvasLocation" x="1209" y="-1935"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -129,7 +129,6 @@
                             <constraint firstAttribute="trailing" secondItem="8rL-vy-zLd" secondAttribute="trailing" id="j56-gn-zj6"/>
                             <constraint firstItem="jlk-ZL-q92" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vcE-aQ-wET"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="eyw-SZ-Y1r"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -141,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157" y="-1943"/>
+            <point key="canvasLocation" x="2245" y="-1935"/>
         </scene>
         <!--Detalhe Restaurante View Controller-->
         <scene sceneID="PGJ-Gm-8SS">
@@ -307,7 +306,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="0zB-eD-Nqg"/>
                     <connections>
@@ -329,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3NB-DF-EBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="-1943"/>
+            <point key="canvasLocation" x="3196" y="-1927"/>
         </scene>
         <!--Feed View Controller - Noticias Vegano-->
         <scene sceneID="rc1-d0-QCd">
@@ -392,7 +390,6 @@
                             <constraint firstItem="4oF-7t-0vT" firstAttribute="top" secondItem="6Sd-7v-kCZ" secondAttribute="top" id="Fs9-bR-nf9"/>
                             <constraint firstAttribute="trailing" secondItem="4oF-7t-0vT" secondAttribute="trailing" id="KTw-ok-Xna"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Noticias Vegano" id="0dH-1W-4kw"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -403,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjw-0J-pwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157" y="-493"/>
+            <point key="canvasLocation" x="2237" y="-483"/>
         </scene>
         <!--Detalhe News View Controller - Detalhes-->
         <scene sceneID="onc-d2-WVo">
@@ -413,7 +410,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="624" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <dataDetectorType key="dataDetectorTypes"/>
                         <connections>
                             <outlet property="delegate" destination="NS9-TG-vW8" id="Z0X-kS-Dp6"/>
@@ -428,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMD-Pw-VQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3146" y="-493"/>
+            <point key="canvasLocation" x="3210" y="-483"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GXb-KV-JCG">
@@ -443,7 +439,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcI-mf-q1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="1067"/>
+            <point key="canvasLocation" x="1222" y="1035"/>
         </scene>
         <!--Detalhe Cozinha View Controller-->
         <scene sceneID="bZP-UO-a6L">
@@ -519,7 +515,6 @@
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="69V-Gj-jwn"/>
                     <connections>
@@ -532,7 +527,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8N-IF-sND" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3250" y="1067"/>
+            <point key="canvasLocation" x="3242" y="1067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lIR-ca-oWY">
@@ -549,7 +544,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3D0-wl-CNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-493"/>
+            <point key="canvasLocation" x="1222" y="-491"/>
         </scene>
         <!--Kitchen View Controller-->
         <scene sceneID="KJ5-WH-oj0">
@@ -606,7 +601,7 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="156" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CrU-Ba-bUY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="156" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CrU-Ba-bUY">
                                 <rect key="frame" x="0.0" y="392" width="624" height="632"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -661,7 +656,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CrU-Ba-bUY" secondAttribute="trailing" id="IPt-ev-9KX"/>
+                            <constraint firstItem="CrU-Ba-bUY" firstAttribute="leading" secondItem="eEb-Ib-KxW" secondAttribute="leading" id="Jxf-PJ-5bL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pr4-yF-2hC"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -675,25 +673,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgG-fN-uBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="1067"/>
+            <point key="canvasLocation" x="2257" y="1059"/>
         </scene>
         <!--Barra View Controller-->
         <scene sceneID="kAf-Ag-KRW">
             <objects>
-                <viewController id="Caf-to-CEx" customClass="BarraViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="embedInicial" id="Caf-to-CEx" customClass="BarraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QAw-pZ-khR"/>
                         <viewControllerLayoutGuide type="bottom" id="s1M-Qo-fHG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pOC-9A-RGR">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFA-8d-maP">
-                                <rect key="frame" x="0.0" y="0.0" width="145" height="1024"/>
+                            <view alpha="0.69999999999999973" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFA-8d-maP">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="1280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMb-iY-7tc">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMb-iY-7tc">
                                         <rect key="frame" x="4" y="333" width="141" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="iconeNoticias.png">
@@ -704,7 +702,7 @@
                                             <action selector="buttonFeed:" destination="Caf-to-CEx" eventType="touchUpInside" id="jyx-tY-4Ig"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kw-Fs-kkb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kw-Fs-kkb">
                                         <rect key="frame" x="-11" y="542" width="166" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="iconeCozinha.png">
@@ -715,7 +713,7 @@
                                             <action selector="buttonCozinha:" destination="Caf-to-CEx" eventType="touchUpInside" id="Rak-NF-Rxe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4k-2q-hDU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4k-2q-hDU">
                                         <rect key="frame" x="20" y="127" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="iconeRestaurantes.png">
@@ -728,33 +726,62 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="d4k-2q-hDU" secondAttribute="trailing" constant="25" id="1oI-eJ-vvx"/>
+                                    <constraint firstItem="1Kw-Fs-kkb" firstAttribute="leading" secondItem="KFA-8d-maP" secondAttribute="leading" constant="-11" id="451-29-wWJ"/>
+                                    <constraint firstItem="d4k-2q-hDU" firstAttribute="leading" secondItem="KFA-8d-maP" secondAttribute="leading" constant="20" symbolic="YES" id="96K-wB-220"/>
+                                    <constraint firstItem="1Kw-Fs-kkb" firstAttribute="top" secondItem="KFA-8d-maP" secondAttribute="top" constant="542" id="Meh-5r-m8R"/>
+                                    <constraint firstItem="EMb-iY-7tc" firstAttribute="top" secondItem="KFA-8d-maP" secondAttribute="top" constant="333" id="Rli-5B-7Wp"/>
+                                    <constraint firstAttribute="trailing" secondItem="EMb-iY-7tc" secondAttribute="trailing" id="dHq-gM-P05"/>
+                                    <constraint firstItem="d4k-2q-hDU" firstAttribute="top" secondItem="KFA-8d-maP" secondAttribute="top" constant="127" id="sfo-oL-TIt"/>
+                                    <constraint firstItem="EMb-iY-7tc" firstAttribute="leading" secondItem="KFA-8d-maP" secondAttribute="leading" constant="4" id="wF4-mN-L46"/>
+                                    <constraint firstItem="1Kw-Fs-kkb" firstAttribute="centerX" secondItem="KFA-8d-maP" secondAttribute="centerX" id="xVE-cI-dLM"/>
+                                </constraints>
                             </view>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHj-yh-UUi">
-                                <rect key="frame" x="144" y="20" width="880" height="748"/>
+                                <rect key="frame" x="144" y="20" width="624" height="1004"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="Lya-MM-BPk" kind="embed" identifier="embedContainer" id="1eS-eP-Ml0"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6h-xb-5tB">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconeEntrada.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Lp-SE-7JZ">
+                                        <rect key="frame" x="235" y="290" width="300" height="376"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qHj-yh-UUi" firstAttribute="top" secondItem="QAw-pZ-khR" secondAttribute="bottom" id="I66-nf-fqG"/>
-                            <constraint firstItem="s1M-Qo-fHG" firstAttribute="top" secondItem="qHj-yh-UUi" secondAttribute="bottom" id="Kxa-hW-v37"/>
+                            <constraint firstItem="s1M-Qo-fHG" firstAttribute="top" secondItem="qHj-yh-UUi" secondAttribute="bottom" id="CTU-qS-MqC"/>
+                            <constraint firstItem="y6h-xb-5tB" firstAttribute="leading" secondItem="pOC-9A-RGR" secondAttribute="leading" id="GDV-Ot-ELv"/>
+                            <constraint firstAttribute="trailing" secondItem="y6h-xb-5tB" secondAttribute="trailing" id="Gci-my-iF8"/>
+                            <constraint firstItem="KFA-8d-maP" firstAttribute="top" secondItem="y6h-xb-5tB" secondAttribute="top" id="KTb-oH-diV"/>
                             <constraint firstAttribute="trailing" secondItem="qHj-yh-UUi" secondAttribute="trailing" id="Ltp-Yf-MfC"/>
+                            <constraint firstItem="KFA-8d-maP" firstAttribute="leading" secondItem="y6h-xb-5tB" secondAttribute="leading" id="aV5-s2-8NB"/>
+                            <constraint firstItem="s1M-Qo-fHG" firstAttribute="top" secondItem="y6h-xb-5tB" secondAttribute="bottom" id="brA-2L-niT"/>
                             <constraint firstItem="qHj-yh-UUi" firstAttribute="leading" secondItem="pOC-9A-RGR" secondAttribute="leading" constant="144" id="gPw-sJ-flU"/>
+                            <constraint firstItem="qHj-yh-UUi" firstAttribute="top" secondItem="QAw-pZ-khR" secondAttribute="bottom" id="pO4-P4-ygU"/>
+                            <constraint firstAttribute="bottom" secondItem="KFA-8d-maP" secondAttribute="bottom" constant="-256" id="sLD-c3-uiQ"/>
+                            <constraint firstItem="y6h-xb-5tB" firstAttribute="top" secondItem="pOC-9A-RGR" secondAttribute="top" id="z7s-c9-cgg"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="containerViews" destination="qHj-yh-UUi" id="JIT-au-RYK"/>
+                        <outlet property="viewInicial" destination="y6h-xb-5tB" id="nbk-kf-eYh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHI-Gr-ogn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1615" y="-483"/>
+            <point key="canvasLocation" x="-909" y="-467"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="06s-3E-kUX">
@@ -768,7 +795,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="624" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -781,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8S-o3-crh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-610" y="-473"/>
+            <point key="canvasLocation" x="70" y="-467"/>
         </scene>
     </scenes>
     <resources>
@@ -794,6 +820,7 @@
         <image name="iconeCozinha.png" width="100" height="100"/>
         <image name="iconeCursor.png" width="512" height="512"/>
         <image name="iconeEndereco.png" width="512" height="512"/>
+        <image name="iconeEntrada.png" width="300" height="300"/>
         <image name="iconeNoticias.png" width="100" height="100"/>
         <image name="iconeRelogio.png" width="120" height="120"/>
         <image name="iconeRestaurantes.png" width="100" height="100"/>
