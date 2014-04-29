@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1A5EA9190EE19100C1B5DE /* panela.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EA8190EE19100C1B5DE /* panela.jpg */; };
 		0B1A5EAB190EE3E000C1B5DE /* bloco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EAA190EE3E000C1B5DE /* bloco.jpg */; };
-		0B1A5EAD190EEF7600C1B5DE /* mais.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EAC190EEF7600C1B5DE /* mais.png */; };
-		0B1A5EAF190EF69400C1B5DE /* colher.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A5EAE190EF69400C1B5DE /* colher.png */; };
 		0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326318FEF787008B5D73 /* BarraViewController.m */; };
 		0B3D326718FEF905008B5D73 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326618FEF905008B5D73 /* FeedViewController.m */; };
 		0B3D326A18FEFB77008B5D73 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D326918FEFB77008B5D73 /* ContainerViewController.m */; };
@@ -29,6 +26,15 @@
 		0BB60DEF190AFE5D000E87E1 /* iconeEndereco.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB60DEB190AFE5D000E87E1 /* iconeEndereco.png */; };
 		0BB60DF0190AFE5D000E87E1 /* iconeTelefone.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB60DEC190AFE5D000E87E1 /* iconeTelefone.png */; };
 		3F1BDF18190C75F0001A151F /* circulo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1BDF17190C75F0001A151F /* circulo.png */; };
+		3FAB5B07190F4FDE0013FC75 /* colher.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B06190F4FDE0013FC75 /* colher.png */; };
+		3FAB5B0F190F6C1D0013FC75 /* mais.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B0C190F6C1D0013FC75 /* mais.png */; };
+		3FAB5B10190F6C1D0013FC75 /* mesa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B0D190F6C1D0013FC75 /* mesa.jpg */; };
+		3FAB5B11190F6C1D0013FC75 /* panela.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B0E190F6C1D0013FC75 /* panela.png */; };
+		3FAB5B13190F815C0013FC75 /* reciclar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B12190F815C0013FC75 /* reciclar.jpeg */; };
+		3FAB5B18190F87C30013FC75 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B14190F87C30013FC75 /* clock.png */; };
+		3FAB5B19190F87C30013FC75 /* cozimento.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B15190F87C30013FC75 /* cozimento.png */; };
+		3FAB5B1A190F87C30013FC75 /* nivel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B16190F87C30013FC75 /* nivel.png */; };
+		3FAB5B1B190F87C30013FC75 /* pessoa.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB5B17190F87C30013FC75 /* pessoa.png */; };
 		3FAB7E8618FCEA05001F0290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8518FCEA05001F0290 /* Foundation.framework */; };
 		3FAB7E8818FCEA05001F0290 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */; };
 		3FAB7E8A18FCEA05001F0290 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7E8918FCEA05001F0290 /* UIKit.framework */; };
@@ -66,10 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B1A5EA8190EE19100C1B5DE /* panela.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panela.jpg; sourceTree = "<group>"; };
 		0B1A5EAA190EE3E000C1B5DE /* bloco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bloco.jpg; sourceTree = "<group>"; };
-		0B1A5EAC190EEF7600C1B5DE /* mais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mais.png; sourceTree = "<group>"; };
-		0B1A5EAE190EF69400C1B5DE /* colher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colher.png; sourceTree = "<group>"; };
 		0B3D326218FEF787008B5D73 /* BarraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarraViewController.h; path = ../BarraViewController.h; sourceTree = "<group>"; };
 		0B3D326318FEF787008B5D73 /* BarraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarraViewController.m; path = ../BarraViewController.m; sourceTree = "<group>"; };
 		0B3D326518FEF905008B5D73 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -101,6 +104,15 @@
 		0BB60DEB190AFE5D000E87E1 /* iconeEndereco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeEndereco.png; sourceTree = "<group>"; };
 		0BB60DEC190AFE5D000E87E1 /* iconeTelefone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeTelefone.png; sourceTree = "<group>"; };
 		3F1BDF17190C75F0001A151F /* circulo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circulo.png; sourceTree = "<group>"; };
+		3FAB5B06190F4FDE0013FC75 /* colher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colher.png; sourceTree = "<group>"; };
+		3FAB5B0C190F6C1D0013FC75 /* mais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mais.png; sourceTree = "<group>"; };
+		3FAB5B0D190F6C1D0013FC75 /* mesa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mesa.jpg; sourceTree = "<group>"; };
+		3FAB5B0E190F6C1D0013FC75 /* panela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panela.png; sourceTree = "<group>"; };
+		3FAB5B12190F815C0013FC75 /* reciclar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reciclar.jpeg; sourceTree = "<group>"; };
+		3FAB5B14190F87C30013FC75 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		3FAB5B15190F87C30013FC75 /* cozimento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cozimento.png; sourceTree = "<group>"; };
+		3FAB5B16190F87C30013FC75 /* nivel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nivel.png; sourceTree = "<group>"; };
+		3FAB5B17190F87C30013FC75 /* pessoa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pessoa.png; sourceTree = "<group>"; };
 		3FAB7E8218FCEA05001F0290 /* iVegetables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVegetables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAB7E8518FCEA05001F0290 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -336,12 +348,18 @@
 		3FB7B23618FE54A800468BAB /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				3FAB5B14190F87C30013FC75 /* clock.png */,
+				3FAB5B15190F87C30013FC75 /* cozimento.png */,
+				3FAB5B16190F87C30013FC75 /* nivel.png */,
+				3FAB5B17190F87C30013FC75 /* pessoa.png */,
+				3FAB5B12190F815C0013FC75 /* reciclar.jpeg */,
 				0BB60DE9190AFE5D000E87E1 /* iconeAlface.png */,
 				0B1A5EAA190EE3E000C1B5DE /* bloco.jpg */,
-				0B1A5EAC190EEF7600C1B5DE /* mais.png */,
 				3FE00BF3190C6F5400B13578 /* iconeRelogio.png */,
-				0B1A5EAE190EF69400C1B5DE /* colher.png */,
-				0B1A5EA8190EE19100C1B5DE /* panela.jpg */,
+				3FAB5B0C190F6C1D0013FC75 /* mais.png */,
+				3FAB5B0D190F6C1D0013FC75 /* mesa.jpg */,
+				3FAB5B0E190F6C1D0013FC75 /* panela.png */,
+				3FAB5B06190F4FDE0013FC75 /* colher.png */,
 				0BB60DEA190AFE5D000E87E1 /* iconeCursor.png */,
 				0BB60DEB190AFE5D000E87E1 /* iconeEndereco.png */,
 				3F1BDF17190C75F0001A151F /* circulo.png */,
@@ -450,23 +468,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1A5EA9190EE19100C1B5DE /* panela.jpg in Resources */,
 				A8605EC419082E91000D9D23 /* backgroundVerde.jpg in Resources */,
 				0BB60DEE190AFE5D000E87E1 /* iconeCursor.png in Resources */,
+				3FAB5B19190F87C30013FC75 /* cozimento.png in Resources */,
 				A8605EC819082E91000D9D23 /* pino.png in Resources */,
 				3FAB7E9E18FCEA05001F0290 /* Images.xcassets in Resources */,
 				3FAB7E9018FCEA05001F0290 /* InfoPlist.strings in Resources */,
-				0B1A5EAF190EF69400C1B5DE /* colher.png in Resources */,
+				3FAB5B07190F4FDE0013FC75 /* colher.png in Resources */,
 				A8605EC519082E91000D9D23 /* iconeCozinha.png in Resources */,
 				0B1A5EAB190EE3E000C1B5DE /* bloco.jpg in Resources */,
+				3FAB5B11190F6C1D0013FC75 /* panela.png in Resources */,
 				0BB60DF0190AFE5D000E87E1 /* iconeTelefone.png in Resources */,
 				A8605ECA19082F5E000D9D23 /* iconeRestaurantes.png in Resources */,
+				3FAB5B1A190F87C30013FC75 /* nivel.png in Resources */,
 				3FE00BF4190C6F5400B13578 /* iconeRelogio.png in Resources */,
+				3FAB5B18190F87C30013FC75 /* clock.png in Resources */,
 				0BB60DEF190AFE5D000E87E1 /* iconeEndereco.png in Resources */,
-				0B1A5EAD190EEF7600C1B5DE /* mais.png in Resources */,
+				3FAB5B1B190F87C30013FC75 /* pessoa.png in Resources */,
+				3FAB5B0F190F6C1D0013FC75 /* mais.png in Resources */,
+				3FAB5B10190F6C1D0013FC75 /* mesa.jpg in Resources */,
 				A8605EC619082E91000D9D23 /* iconeNoticias.png in Resources */,
 				3F1BDF18190C75F0001A151F /* circulo.png in Resources */,
 				3FAB7E9918FCEA05001F0290 /* Main.storyboard in Resources */,
+				3FAB5B13190F815C0013FC75 /* reciclar.jpeg in Resources */,
 				0BB60DED190AFE5D000E87E1 /* iconeAlface.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

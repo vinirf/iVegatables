@@ -28,8 +28,9 @@
     
     [self.mapVegetables setDelegate:self];
     
+    
+    
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
-        // Add observer
         self.mapVegetables.showsUserLocation = YES;
         
         [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
@@ -37,6 +38,14 @@
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
         [[self navigationItem] setBackBarButtonItem:backButton];
         
+        
+    }else{
+        self.mapVegetables.showsUserLocation = YES;
+        
+        [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+        
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+        [[self navigationItem] setBackBarButtonItem:backButton];
     }
    
         
@@ -61,25 +70,29 @@
     [[self mapVegetables] setCenterCoordinate: userLocation.location.coordinate];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    static NSString *annotationViewReuseIdentifier = @"annotationViewReuseIdentifier";
     
-    static NSString *annotationIdentifier = @"annotationIdentifier";
-    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+    MKAnnotationView *annotationView = (MKAnnotationView *)[self.mapVegetables dequeueReusableAnnotationViewWithIdentifier:annotationViewReuseIdentifier];
     
-    
-    if (pinView.annotation == mapView.userLocation) {
-        return nil;
-    }else{
-        [pinView setImage:[UIImage imageNamed:@"pino.png"]];
+    if (annotationView == nil)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationViewReuseIdentifier];
     }
     
+    if (annotationView.annotation == self.mapVegetables.userLocation) {
+        return nil;
+        
+    }else{
+        annotationView.image = [UIImage imageNamed:@"pino.png"];
+        annotationView.annotation = annotation;
+    }
     
-    pinView.canShowCallout = YES;
-    pinView.animatesDrop = YES;
-    pinView.selected = YES;
+    annotationView.canShowCallout = YES;
+    annotationView.selected = YES;
     
-    
-    return pinView;
+    return annotationView;
 }
 
 
@@ -100,9 +113,7 @@
     int qtdPesquisa = 10;
     
     NSString *thePath = [NSString stringWithFormat:@"%@%f%@%f%@%@%@%d",@"https://api.foursquare.com/v2/venues/explore?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=",latitude,@",",longitude,@"&query=",termoPesquisa,@"&limit=",qtdPesquisa];
-    
-//    NSString *thePath = @"https://api.foursquare.com/v2/venues/explore?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=-23.657196,-46.751254&query=vegetariano&limit=30";
-    
+     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:thePath]];
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     

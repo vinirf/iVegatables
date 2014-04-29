@@ -127,25 +127,31 @@
     [self.mapaDetalhes setRegion:region];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    static NSString *annotationViewReuseIdentifier = @"annotationViewReuseIdentifier";
     
-    static NSString *annotationIdentifier = @"annotationIdentifier";
-    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+    MKAnnotationView *annotationView = (MKAnnotationView *)[self.mapaDetalhes dequeueReusableAnnotationViewWithIdentifier:annotationViewReuseIdentifier];
     
+    if (annotationView == nil)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationViewReuseIdentifier];
+    }
     
-    if (pinView.annotation == mapView.userLocation) {
+    if (annotationView.annotation == self.mapaDetalhes.userLocation) {
         return nil;
         
     }else{
-        [pinView setImage:[UIImage imageNamed:@"pino.png"]];
+        annotationView.image = [UIImage imageNamed:@"pino.png"];
+        annotationView.annotation = annotation;
     }
+
+    annotationView.canShowCallout = YES;
+    annotationView.selected = YES;
     
-    
-    pinView.canShowCallout = YES;
-    pinView.animatesDrop = YES;
-    pinView.selected = YES;
-    
-    return pinView;
+    return annotationView;
 }
+
 
 @end

@@ -35,6 +35,9 @@
     self.campBusca.delegate = self;
     self.valorDeslocamento = 130;
     self.auxStringBusca = 1;
+    self.listRceitas.hidden = YES;
+    self.lblSemRetorno.hidden = YES;
+    blocosIngredientes = [[NSMutableArray alloc]init];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
     singleTap.numberOfTapsRequired = 1;
@@ -50,21 +53,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)resetaReceitas{
+    self.valorDeslocamento = 130;
+    self.auxStringBusca = 1;
+    self.listRceitas.hidden = YES;
+    self.lblSemRetorno.hidden = YES;
+    
+    for(int i=0;i<blocosIngredientes.count;i++){
+        UIImageView *coord = [blocosIngredientes  objectAtIndex:i];
+        coord.hidden = YES;
+    }
+   
+    
+    [UIView animateWithDuration:2.0
+                     animations:^(void){
+                         CGRect moveColher = CGRectMake(520, 320, 100, 100);
+                         self.imgColher.frame = moveColher;
+                     } completion:^(BOOL finished){
+                       
+                     }];
+}
+
+
+- (IBAction)btnLimpar:(id)sender {
+    [self resetaReceitas];
+}
 
 
 -(void)parseReceitasHtml{
     
-
-    NSString *termoBusca = self.campBusca.text;
-    NSData *data = [termoBusca dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    termoBusca = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     
-    NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@" "];
-    termoBusca = [[termoBusca componentsSeparatedByCharactersInSet: doNotWant] componentsJoinedByString:@"+"];
     
-    NSLog(@"%@", termoBusca);
+    NSString *linkBusca = [NSString stringWithFormat:@"%@%@",@"http://www.menuvegano.com.br/article/search?q=",self.stringDeBusca];
     
-    NSString *linkBusca = [NSString stringWithFormat:@"%@%@",@"http://www.menuvegano.com.br/article/search?q=",termoBusca];
     
     NSURL* query = [NSURL URLWithString:linkBusca];
     NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
@@ -73,11 +94,22 @@
     NSRange searchFromRange = [string rangeOfString:@"main-container"];
     NSRange searchToRange = [string rangeOfString:@"container footer"];
     NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
+    
 
     
     NSString *stringFinal = substring;
     
     NSRange continua =[stringFinal rangeOfString:@"class=\"span3 galery\""];
+    
+    if([stringFinal rangeOfString:@"class=\"span3 galery\""].location == NSNotFound){
+        self.lblSemRetorno.hidden = NO;
+        self.listRceitas.hidden = YES;
+        [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(resetaReceitas) userInfo:nil repeats:NO];
+
+    }else{
+        self.lblSemRetorno.hidden = YES;
+        self.listRceitas.hidden = NO;
+    }
     
     while(continua.location != NSNotFound){
         
@@ -144,7 +176,7 @@
     
     UILabel *recipeNameLabel = (UILabel *)[cell viewWithTag:101];
     recipeNameLabel.text = recipe.nome;
-    
+   
     
     return cell;
 }
@@ -160,89 +192,127 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Receita *recipe = [[[DataBaseReceita sharedManager]listaReceitas] objectAtIndex:[indexPath row]];
     [AuxWebNoticia sharedManager].linkReceita = [recipe subLink];
-    NSLog(@"link = %@",recipe.subLink);
     
 }
 
+-(void)giraColher{
+    
+    [UIView animateWithDuration:2.0
+                     animations:^(void){
+                         self.imgColher.transform = CGAffineTransformMakeRotation((M_PI/-4));
+                     } completion:^(BOOL finished){
+                         [UIView animateWithDuration:2.0 delay:0 options: UIViewAnimationOptionCurveEaseInOut
+                                          animations:^(void){
+                                              self.imgColher.transform = CGAffineTransformMakeRotation(M_PI);
+                                          } completion:^(BOOL finished){
+                                              self.imgColher.transform = CGAffineTransformMakeRotation(M_PI/4);
+                                              
+                                          }];
+                     }];
+}
 
+-(void)moveColher{
+    [UIView animateWithDuration:2.0
+                     animations:^(void){
+                         CGRect moveColher = CGRectMake(30, 250, 100, 100);
+                         self.imgColher.frame = moveColher;
+                     } completion:^(BOOL finished){
+                         self.imgColher.frame =CGRectMake(30, 250, 100, 100);
+                     }];
+    
+    
+}
 
 
 -(void)tapDetected{
-    NSLog(@"single Tap on imageview");
-    //self.imgColher.transform = CGAffineTransformMakeRotation(M_PI/2);
-    [UIView animateWithDuration:2.0 delay:0 options: UIViewAnimationOptionCurveEaseInOut
-                     animations:^(void){
-                self.imgColher.transform = CGAffineTransformMakeRotation(M_PI/2);
-     } completion:NULL
-     ];
+    NSData *data = [self.stringDeBusca dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    self.stringDeBusca = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    
+    NSThread *myThread =[[NSThread alloc]initWithTarget:self selector:@selector(moveColher) object:nil];
+    [myThread start];
+    
+    [DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
+    [self parseReceitasHtml];
+    
+    [myThread cancel];
+    
+    
 }
 
 - (IBAction)botaoPesquisar:(id)sender {
-    //[DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
-    //[self parseReceitasHtml];
     [self descerIngrediente];
-    self.campBusca.text = @"";
+    [[self campBusca] resignFirstResponder];
 }
 
 -(void)descerIngrediente{
+    NSLog(@" %@",[self campBusca].text);
+    if(![[self campBusca].text  isEqual:@""]){
 
-    fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 23, 80, 30)];
-    fromLabel.text = [self campBusca].text;;
-    fromLabel.backgroundColor = [UIColor clearColor];
-    fromLabel.textColor = [UIColor blackColor];
-    fromLabel.textAlignment = NSTextAlignmentCenter;
-    //fromLabel.numberOfLines = 3;
-    
-    imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 80, 80)];
-    imgView.image = [UIImage imageNamed:@"bloco.jpg"];
-    [imgView addSubview:fromLabel];
-    [self.view addSubview:imgView];
-
-    
-    [UIView animateWithDuration:1.0 animations:^{
-        CGRect moveAviaoDecolar = CGRectMake(20, 250, 80, 80);
-        imgView.frame = moveAviaoDecolar;
-    }
-                     completion:^(BOOL finished){
-                         if(finished){
-                             CGRect moveAviaoDecolar = CGRectMake(20, 10, 80, 80);
-                             imgView.frame = moveAviaoDecolar;
-                             [imgView setHidden:TRUE];
-                             
-                             UIImageView *imgView2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.valorDeslocamento, 320, 60, 60)];
-                             imgView2.image = [UIImage imageNamed:@"bloco.jpg"];
-                             fromLabel.frame = CGRectMake(0, 15, 60, 30);
-                             [imgView2 addSubview:fromLabel];
-                             [self.view addSubview:imgView2];
-                             
-                             UIImageView *imgView3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.valorDeslocamento-17, 340, 15, 15)];
-                             imgView3.image = [UIImage imageNamed:@"mais.png"];
-                            
-                            [self.view addSubview:imgView3];
-                            [self.view addSubview:imgView2];
-                             
-                             self.valorDeslocamento = self.valorDeslocamento + 80;
-                             
-                             if(self.auxStringBusca == 1){
-                                 self.stringDeBusca = self.campBusca.text;
-                             }else{
-                                 self.stringDeBusca =  [NSString stringWithFormat:@"%@+%@",self.stringDeBusca,self.campBusca.text];
+        fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 23, 70, 30)];
+        fromLabel.text = [self campBusca].text;
+        fromLabel.backgroundColor = [UIColor clearColor];
+        fromLabel.textColor = [UIColor blackColor];
+        fromLabel.textAlignment = NSTextAlignmentCenter;
+        
+        
+        imgView = [[UIImageView alloc] initWithFrame:CGRectMake(30, 10, 70, 70)];
+        imgView.image = [UIImage imageNamed:@"bloco.jpg"];
+        imgView.layer.zPosition = -10;
+        
+        [imgView addSubview:fromLabel];
+        [self.view addSubview:imgView];
+        
+        
+        [UIView animateWithDuration:1.1 animations:^{
+            CGRect moveAviaoDecolar = CGRectMake(30, 300, 70, 70);
+            imgView.frame = moveAviaoDecolar;
+        }
+                         completion:^(BOOL finished){
+                             if(finished){
+                                 CGRect moveAviaoDecolar = CGRectMake(30, 10, 70, 70);
+                                 imgView.frame = moveAviaoDecolar;
+                                 
+                                 imgView2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.valorDeslocamento, 320, 60, 60)];
+                                 imgView2.image = [UIImage imageNamed:@"bloco.jpg"];
+                                 fromLabel.frame = CGRectMake(0, 15, 60, 30);
+                                 [imgView2 addSubview:fromLabel];
+                                 [self.view addSubview:imgView2];
+                                 [blocosIngredientes addObject:imgView2];
+                                 
+                                 UIImageView *imgView3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.valorDeslocamento-17, 340, 15, 15)];
+                                 imgView3.image = [UIImage imageNamed:@"mais.png"];
+                                 [blocosIngredientes addObject:imgView3];
+                                 
+                                 [self.view addSubview:imgView3];
+                                 [self.view addSubview:imgView2];
+                                 
+                                 self.valorDeslocamento = self.valorDeslocamento + 80;
+                                 
+                                 
+                                 NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@"  ."];
+                                 self.campBusca.text = [[self.campBusca.text componentsSeparatedByCharactersInSet: doNotWant] componentsJoinedByString:@""];
+                                 
+                                 
+                                 if(self.auxStringBusca == 1){
+                                     self.stringDeBusca = self.campBusca.text;
+                                 }else{
+                                     self.stringDeBusca =  [NSString stringWithFormat:@"%@+%@",self.stringDeBusca,self.campBusca.text];
+                                 }
+                                 
+                                 self.auxStringBusca +=1;
+                                 self.campBusca.text = @"";
+                                 
                              }
-                             
-                             self.auxStringBusca +=1;
-                             
-                             NSLog(@"l = %@",self.stringDeBusca);
-                         }
-                     }];
+                         }];
+    }
+    
+    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField{
    
-    //[DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
-    //[self parseReceitasHtml];
     [self descerIngrediente];
     [[self campBusca] resignFirstResponder];
-    self.campBusca.text = @"";
     
     return YES;
 }
