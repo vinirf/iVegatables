@@ -38,9 +38,12 @@
     self.listRceitas.hidden = YES;
     self.lblSemRetorno.hidden = YES;
     blocosIngredientes = [[NSMutableArray alloc]init];
+    [AuxWebNoticia sharedManager].listaImagensReceitas = [[NSMutableArray alloc]init];
+    [DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
-    singleTap.numberOfTapsRequired = 1;
+    UISwipeGestureRecognizer *singleTap = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+    singleTap.numberOfTouchesRequired = 1;
+    singleTap.direction = UISwipeGestureRecognizerDirectionLeft;
     self.imgColher.userInteractionEnabled = YES;
     [self.imgColher addGestureRecognizer:singleTap];
     
@@ -58,6 +61,10 @@
     self.auxStringBusca = 1;
     self.listRceitas.hidden = YES;
     self.lblSemRetorno.hidden = YES;
+   
+    [AuxWebNoticia sharedManager].listaImagensReceitas = [[NSMutableArray alloc]init];
+    
+    [DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
     
     for(int i=0;i<blocosIngredientes.count;i++){
         UIImageView *coord = [blocosIngredientes  objectAtIndex:i];
@@ -72,6 +79,8 @@
                      } completion:^(BOOL finished){
                        
                      }];
+    
+    
 }
 
 
@@ -82,9 +91,9 @@
 
 -(void)parseReceitasHtml{
     
+    [NSTimer scheduledTimerWithTimeInterval:2.3 target:self selector:@selector(giraColher) userInfo:nil repeats:NO];
     
-    NSString *linkBusca = [NSString stringWithFormat:@"%@%@",@"http://www.menuvegano.com.br/article/search?q=",self.stringDeBusca];
-    
+    NSString *linkBusca = [NSString stringWithFormat:@"%@%@",@"http://www.menuvegano.com.br/article/search?content_type_id=3&q=",self.stringDeBusca];
     
     NSURL* query = [NSURL URLWithString:linkBusca];
     NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
@@ -125,6 +134,19 @@
         NSString *linkImagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</a>"].location-4];
         rect.imagem = linkImagem;
         
+       NSURL *url = [NSURL URLWithString:linkImagem];
+       NSData *data = [NSData dataWithContentsOfURL:url];
+       UIImage *img = [[UIImage alloc] initWithData:data ];
+        
+        if(img != NULL){
+            [[[AuxWebNoticia sharedManager]listaImagensReceitas]addObject:img];
+        }else{
+            UIImage *image1 = [UIImage imageNamed:@"iconeAlface.png"];
+            [[[AuxWebNoticia sharedManager]listaImagensReceitas]addObject:image1];
+        }
+       
+
+        
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<h5>"].location+4];
         NSString *titulo = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</h5>"].location];
         rect.nome = titulo;
@@ -163,17 +185,12 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    // Display recipe in the table cell
+        // Display recipe in the table cell
     Receita *recipe = [[[DataBaseReceita sharedManager]listaReceitas] objectAtIndex:[indexPath row]];
     
-    NSURL *url = [NSURL URLWithString:[recipe imagem]];
-    
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc] initWithData:data ];
-    
-    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:110];
-    recipeImageView.image = img;
+
+    recipeImageView = (UIImageView *)[cell viewWithTag:110];
+    recipeImageView.image = [[[AuxWebNoticia sharedManager]listaImagensReceitas]objectAtIndex:[indexPath row]];
     
     UILabel *recipeNameLabel = (UILabel *)[cell viewWithTag:101];
     recipeNameLabel.text = recipe.nome;
@@ -240,12 +257,11 @@
     self.stringDeBusca = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     
     myThread =[[NSThread alloc]initWithTarget:self selector:@selector(moveColher) object:nil];
-    
-    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(giraColher) userInfo:nil repeats:NO];
 
     [myThread start];
     
     [DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
+    [AuxWebNoticia sharedManager].listaImagensReceitas = [[NSMutableArray alloc]init];
     [self parseReceitasHtml];
     
     
@@ -257,7 +273,7 @@
 }
 
 -(void)descerIngrediente{
-    NSLog(@" %@",[self campBusca].text);
+
     if(![[self campBusca].text  isEqual:@""]){
 
         fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 23, 70, 30)];

@@ -23,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButton];
     
@@ -79,6 +82,11 @@
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"src"].location+5];
         news.imagem = [stringFinal substringToIndex:[stringFinal rangeOfString:@"class"].location-2];
         
+        NSURL *url = [NSURL URLWithString:news.imagem];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *img = [[UIImage alloc] initWithData:data ];
+        [[[AuxWebNoticia sharedManager]listaImagens]addObject:img];
+        
         stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@" title=\""].location+18];
         news.titulo = [stringFinal substringToIndex:[stringFinal rangeOfString:@"<span"].location-2];
 
@@ -90,12 +98,7 @@
         
 
         [[DateBaseNoticia sharedManager]AddNoticia:news];
-//        
-//        NSLog(@"link %@ ",news.link);
-//        NSLog(@"imag %@ ",news.imagem);
-//        NSLog(@"titu %@ ",news.titulo);
-//        NSLog(@"data %@ ",news.data);
-//        NSLog(@"\n");
+
         
         continua = [stringFinal rangeOfString:@"<div class=\"post\">"];
         
@@ -132,11 +135,8 @@
     // Display recipe in the table cell
     Noticia *recipe = [[[DateBaseNoticia sharedManager]listaNoticias] objectAtIndex:[indexPath row]];
     
-    NSURL *url = [NSURL URLWithString:[recipe imagem]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc] initWithData:data ];
-    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:110];
-    recipeImageView.image = img;
+    recipeImageView = (UIImageView *)[cell viewWithTag:110];
+    recipeImageView.image = [[[AuxWebNoticia sharedManager]listaImagens ]objectAtIndex:[indexPath row]];
     
     UILabel *recipeNameLabel = (UILabel *)[cell viewWithTag:101];
     recipeNameLabel.text = recipe.titulo;

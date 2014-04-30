@@ -23,6 +23,8 @@
     if(self){
         self.estadoRepetirViewFeed = YES;
         self.estadoRepetirViewRestaurante = YES;
+        self.listaImagens = [[NSMutableArray alloc]init];
+         self.listaImagensReceitas = [[NSMutableArray alloc]init];
     }
     return self;
 }

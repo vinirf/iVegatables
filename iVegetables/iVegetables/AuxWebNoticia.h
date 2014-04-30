@@ -17,5 +17,7 @@
 
 @property BOOL estadoRepetirViewFeed;
 @property BOOL estadoRepetirViewRestaurante;
+@property NSMutableArray *listaImagens;
+@property NSMutableArray *listaImagensReceitas;
 
 @end

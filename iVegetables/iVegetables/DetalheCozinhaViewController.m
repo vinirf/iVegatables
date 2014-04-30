@@ -8,6 +8,8 @@
 
 #import "DetalheCozinhaViewController.h"
 #import "AuxWebNoticia.h"
+#import "ReceitaBase.h"
+#import "AppDelegate.h"
 
 @interface DetalheCozinhaViewController ()
 
@@ -34,6 +36,8 @@
     [self pegaFotoReceita];
     [self pegaDadosDaReceita];
     [self loadUIWebView];
+    
+   
 
 }
 
@@ -41,6 +45,64 @@
 {
     [super didReceiveMemoryWarning];
 
+}
+
+-(void)salvarDadosCoreData{
+    
+   AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    ReceitaBase *novaReceita = [NSEntityDescription insertNewObjectForEntityForName:@"ReceitaBase" inManagedObjectContext:context];
+    
+    [novaReceita setNome:@"string"];
+//    [novaReceita setImg:@"string"];
+//    [novaReceita setImg2x:@"string"];
+//    [novaReceita setSubLink:@"string"];
+//    [novaReceita setTempoCozimento:@"string"];
+//    [novaReceita setTempoPreparo:@"string"];
+//    [novaReceita setNivel:@"string"];
+//    [novaReceita setRendimento:@"string"];
+//    [novaReceita setHtmlModoPreparo:@"string"];
+    
+    NSError *error = nil;
+    [context save:&error];
+
+
+    
+     [self carregarReceitasCoreData];
+    
+}
+
+
+-(void)carregarReceitasCoreData{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ReceitaBase"];
+    NSString *campo;
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(nome = %@)",campo];
+    [request setPredicate:pred];
+    ReceitaBase *matches = nil;
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    
+    NSLog(@"campo = %@",campo);
+    
+    if([objects count]==0){
+        NSLog(@"no maches");
+        NSLog(@"campo = %@",campo)
+    }
+    
+    for(int i=0;i<objects.count;i++){
+        matches = [objects objectAtIndex:i];
+        NSLog(@"campo = %@",campo)
+        NSLog(@"mat = %@",matches.nome);
+
+    }
+    
+    
 }
 
 //Método do delegate de webview, impede que a webview abra novos links

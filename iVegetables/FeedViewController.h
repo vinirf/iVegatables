@@ -9,11 +9,12 @@
 #import "ViewController.h"
 
 @interface FeedViewController : ViewController <UITableViewDataSource, UITableViewDelegate> {
-    
+    UIImageView *recipeImageView;
 }
 
 
 @property (weak, nonatomic) IBOutlet UITableView *newsTable;
 @property BOOL estadoRepetir;
+
 
 @end

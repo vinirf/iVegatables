@@ -31,14 +31,20 @@
    
     NSLog(@"string");
     
+    [NSTimer scheduledTimerWithTimeInterval:0.0 target:self selector:@selector(aparece) userInfo:nil repeats:NO];
+    
+    
+}
+
+-(void)aparece{
     CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    fadeAnim.fromValue = [NSNumber numberWithFloat:0.0];
+    fadeAnim.fromValue = [NSNumber numberWithFloat:0.1];
     fadeAnim.toValue = [NSNumber numberWithFloat:1.0];
     fadeAnim.duration = 3.0;
     [self.view.layer addAnimation:fadeAnim forKey:@"opacity"];
     
-    [NSTimer scheduledTimerWithTimeInterval:8.0 target:self selector:@selector(fadeOut) userInfo:nil repeats:NO];
-    
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fadeOut) userInfo:nil repeats:NO];
+
 }
 
 -(void)tiraTelaInicial{

@@ -53,8 +53,9 @@
 		3FAB7EB118FCEA05001F0290 /* iVegetablesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB7EB018FCEA05001F0290 /* iVegetablesTests.m */; };
 		3FAB7EBB18FCEBBF001F0290 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */; };
 		3FAD817718FFA9C500B76306 /* DetalheNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD817618FFA9C500B76306 /* DetalheNewsViewController.m */; };
-		3FAD830F19108FEB00CCE4A4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD830D19108FEB00CCE4A4 /* Model.xcdatamodeld */; };
-		3FAD83131910916F00CCE4A4 /* ReceitaGuardada.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD83121910916F00CCE4A4 /* ReceitaGuardada.m */; };
+		3FAD835F19109E1000CCE4A4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAD835E19109E1000CCE4A4 /* CoreData.framework */; };
+		3FDE01F51910B57600F64E8D /* Modelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE01F31910B57600F64E8D /* Modelo.xcdatamodeld */; };
+		3FDE01F81910B5BF00F64E8D /* ReceitaBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE01F71910B5BF00F64E8D /* ReceitaBase.m */; };
 		3FE00BF4190C6F5400B13578 /* iconeRelogio.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE00BF3190C6F5400B13578 /* iconeRelogio.png */; };
 		A8605EC419082E91000D9D23 /* backgroundVerde.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8605EBF19082E91000D9D23 /* backgroundVerde.jpg */; };
 		A8605EC519082E91000D9D23 /* iconeCozinha.png in Resources */ = {isa = PBXBuildFile; fileRef = A8605EC019082E91000D9D23 /* iconeCozinha.png */; };
@@ -142,9 +143,10 @@
 		3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3FAD817518FFA9C500B76306 /* DetalheNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheNewsViewController.h; sourceTree = "<group>"; };
 		3FAD817618FFA9C500B76306 /* DetalheNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheNewsViewController.m; sourceTree = "<group>"; };
-		3FAD830E19108FEB00CCE4A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		3FAD83111910916F00CCE4A4 /* ReceitaGuardada.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaGuardada.h; sourceTree = "<group>"; };
-		3FAD83121910916F00CCE4A4 /* ReceitaGuardada.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaGuardada.m; sourceTree = "<group>"; };
+		3FAD835E19109E1000CCE4A4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3FDE01F41910B57600F64E8D /* Modelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Modelo.xcdatamodel; sourceTree = "<group>"; };
+		3FDE01F61910B5BF00F64E8D /* ReceitaBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaBase.h; sourceTree = "<group>"; };
+		3FDE01F71910B5BF00F64E8D /* ReceitaBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaBase.m; sourceTree = "<group>"; };
 		3FE00BF3190C6F5400B13578 /* iconeRelogio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeRelogio.png; sourceTree = "<group>"; };
 		A8605EBF19082E91000D9D23 /* backgroundVerde.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundVerde.jpg; sourceTree = "<group>"; };
 		A8605EC019082E91000D9D23 /* iconeCozinha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeCozinha.png; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FAD835F19109E1000CCE4A4 /* CoreData.framework in Frameworks */,
 				3FAB7EBB18FCEBBF001F0290 /* MapKit.framework in Frameworks */,
 				3FAB7E8818FCEA05001F0290 /* CoreGraphics.framework in Frameworks */,
 				3FAB7E8A18FCEA05001F0290 /* UIKit.framework in Frameworks */,
@@ -290,6 +293,7 @@
 		3FAB7E8418FCEA05001F0290 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FAD835E19109E1000CCE4A4 /* CoreData.framework */,
 				3FAB7EBA18FCEBBF001F0290 /* MapKit.framework */,
 				3FAB7E8518FCEA05001F0290 /* Foundation.framework */,
 				3FAB7E8718FCEA05001F0290 /* CoreGraphics.framework */,
@@ -369,9 +373,9 @@
 		3FAD83101910911700CCE4A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3FAD830D19108FEB00CCE4A4 /* Model.xcdatamodeld */,
-				3FAD83111910916F00CCE4A4 /* ReceitaGuardada.h */,
-				3FAD83121910916F00CCE4A4 /* ReceitaGuardada.m */,
+				3FDE01F31910B57600F64E8D /* Modelo.xcdatamodeld */,
+				3FDE01F61910B5BF00F64E8D /* ReceitaBase.h */,
+				3FDE01F71910B5BF00F64E8D /* ReceitaBase.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -547,9 +551,9 @@
 				3FAB7E9618FCEA05001F0290 /* AppDelegate.m in Sources */,
 				0B3D326718FEF905008B5D73 /* FeedViewController.m in Sources */,
 				0B3D326D18FEFF00008B5D73 /* EmptySegue.m in Sources */,
-				3FAD83131910916F00CCE4A4 /* ReceitaGuardada.m in Sources */,
 				3FAD817718FFA9C500B76306 /* DetalheNewsViewController.m in Sources */,
 				0B3D327C18FF1CCD008B5D73 /* DateBaseNoticia.m in Sources */,
+				3FDE01F81910B5BF00F64E8D /* ReceitaBase.m in Sources */,
 				0B3D327918FF1CBE008B5D73 /* Noticia.m in Sources */,
 				A8605ECD19083011000D9D23 /* DetalheRestauranteViewController.m in Sources */,
 				0B43C349190052340000103C /* AuxWebNoticia.m in Sources */,
@@ -561,8 +565,8 @@
 				3FAB5B1E190F8E910013FC75 /* InicialViewController.m in Sources */,
 				0BA579E2190984BB00FC5DAF /* Receita.m in Sources */,
 				0B3D326418FEF787008B5D73 /* BarraViewController.m in Sources */,
-				3FAD830F19108FEB00CCE4A4 /* Model.xcdatamodeld in Sources */,
 				0B564DE618FDB46000A59821 /* CoordenadaVegetariano.m in Sources */,
+				3FDE01F51910B57600F64E8D /* Modelo.xcdatamodeld in Sources */,
 				0B3D326A18FEFB77008B5D73 /* ContainerViewController.m in Sources */,
 				0B564DE918FDB47100A59821 /* DateBaseCoordenadaVegetariano.m in Sources */,
 			);
@@ -785,14 +789,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3FAD830D19108FEB00CCE4A4 /* Model.xcdatamodeld */ = {
+		3FDE01F31910B57600F64E8D /* Modelo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3FAD830E19108FEB00CCE4A4 /* Model.xcdatamodel */,
+				3FDE01F41910B57600F64E8D /* Modelo.xcdatamodel */,
 			);
-			currentVersion = 3FAD830E19108FEB00CCE4A4 /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = ../Model.xcdatamodeld;
+			currentVersion = 3FDE01F41910B57600F64E8D /* Modelo.xcdatamodel */;
+			path = Modelo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

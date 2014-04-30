@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblRendimento;
 @property (weak, nonatomic) IBOutlet UILabel *lblDificuldade;
 @property (weak, nonatomic) IBOutlet UIWebView *webInstrucoes;
+- (IBAction)btnAddFavoritos:(id)sender;
 
 @property NSString *linkShared;
 
