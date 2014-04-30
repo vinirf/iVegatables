@@ -31,7 +31,7 @@
    
     NSLog(@"string");
     
-    [NSTimer scheduledTimerWithTimeInterval:0.0 target:self selector:@selector(aparece) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(aparece) userInfo:nil repeats:NO];
     
     
 }
@@ -43,7 +43,7 @@
     fadeAnim.duration = 3.0;
     [self.view.layer addAnimation:fadeAnim forKey:@"opacity"];
     
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fadeOut) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(fadeOut) userInfo:nil repeats:NO];
 
 }
 
