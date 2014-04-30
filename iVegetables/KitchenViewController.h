@@ -13,6 +13,8 @@
     UILabel *fromLabel;
     UIImageView *imgView2;
     NSMutableArray *blocosIngredientes;
+    NSThread *myThread;
+    NSThread *myThread2;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *campBusca;

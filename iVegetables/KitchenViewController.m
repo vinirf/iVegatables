@@ -83,7 +83,6 @@
 -(void)parseReceitasHtml{
     
     
-    
     NSString *linkBusca = [NSString stringWithFormat:@"%@%@",@"http://www.menuvegano.com.br/article/search?q=",self.stringDeBusca];
     
     
@@ -107,6 +106,7 @@
         [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(resetaReceitas) userInfo:nil repeats:NO];
 
     }else{
+        [myThread cancel];
         self.lblSemRetorno.hidden = YES;
         self.listRceitas.hidden = NO;
     }
@@ -136,6 +136,7 @@
     }
     
     continua = [stringFinal rangeOfString:@"class=\"span3 galery\""];
+    
     [self.listRceitas reloadData];
     
 }
@@ -197,16 +198,25 @@
 
 -(void)giraColher{
     
-    [UIView animateWithDuration:2.0
+    [UIView animateWithDuration:1.0
                      animations:^(void){
-                         self.imgColher.transform = CGAffineTransformMakeRotation((M_PI/-4));
+                         CGRect moveColher = CGRectMake(22, 250, 100, 100);
+                         self.imgColher.frame = moveColher;
                      } completion:^(BOOL finished){
-                         [UIView animateWithDuration:2.0 delay:0 options: UIViewAnimationOptionCurveEaseInOut
+                         self.imgColher.frame =CGRectMake(42, 250, 100, 100);
+                         [UIView animateWithDuration:1.0
                                           animations:^(void){
-                                              self.imgColher.transform = CGAffineTransformMakeRotation(M_PI);
+                                              CGRect moveColher = CGRectMake(22, 250, 100, 100);
+                                              self.imgColher.frame = moveColher;
                                           } completion:^(BOOL finished){
-                                              self.imgColher.transform = CGAffineTransformMakeRotation(M_PI/4);
-                                              
+                                              //self.imgColher.frame =CGRectMake(42, 250, 100, 100);
+                                              [UIView animateWithDuration:1.0
+                                                               animations:^(void){
+                                                                   CGRect moveColher = CGRectMake(22, 250, 100, 100);
+                                                                   self.imgColher.frame = moveColher;
+                                                               } completion:^(BOOL finished){
+                                                                   self.imgColher.frame =CGRectMake(42, 250, 100, 100);
+                                                               }];
                                           }];
                      }];
 }
@@ -217,7 +227,8 @@
                          CGRect moveColher = CGRectMake(30, 250, 100, 100);
                          self.imgColher.frame = moveColher;
                      } completion:^(BOOL finished){
-                         self.imgColher.frame =CGRectMake(30, 250, 100, 100);
+                         self.imgColher.frame =CGRectMake(22, 250, 100, 100);
+                                                  
                      }];
     
     
@@ -228,13 +239,14 @@
     NSData *data = [self.stringDeBusca dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     self.stringDeBusca = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     
-    NSThread *myThread =[[NSThread alloc]initWithTarget:self selector:@selector(moveColher) object:nil];
+    myThread =[[NSThread alloc]initWithTarget:self selector:@selector(moveColher) object:nil];
+    
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(giraColher) userInfo:nil repeats:NO];
+
     [myThread start];
     
     [DataBaseReceita sharedManager].listaReceitas = [[NSMutableArray alloc]init];
     [self parseReceitasHtml];
-    
-    [myThread cancel];
     
     
 }

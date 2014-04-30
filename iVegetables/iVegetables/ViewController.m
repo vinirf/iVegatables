@@ -27,27 +27,26 @@
     [super viewDidLoad];
     
     [self.mapVegetables setDelegate:self];
+
+        
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
+            self.mapVegetables.showsUserLocation = YES;
+            
+            [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+            
+            UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+            [[self navigationItem] setBackBarButtonItem:backButton];
+            
+            
+        }else{
+            self.mapVegetables.showsUserLocation = YES;
+            
+            [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+            
+            UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+            [[self navigationItem] setBackBarButtonItem:backButton];
+        }
     
-    
-    
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
-        self.mapVegetables.showsUserLocation = YES;
-        
-        [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
-        
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
-        [[self navigationItem] setBackBarButtonItem:backButton];
-        
-        
-    }else{
-        self.mapVegetables.showsUserLocation = YES;
-        
-        [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
-        
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
-        [[self navigationItem] setBackBarButtonItem:backButton];
-    }
-   
         
 }
 
@@ -61,9 +60,14 @@
     [self.mapVegetables.userLocation removeObserver:self forKeyPath:@"location" context:NULL];
     self.posUsuario = self.mapVegetables.userLocation.location.coordinate;
     
-    [self pegarJson];
+    if([AuxWebNoticia sharedManager].estadoRepetirViewRestaurante == YES){
+        [self pegarJson];
+        [AuxWebNoticia sharedManager].estadoRepetirViewRestaurante = NO;
+    }
+    
     [self marcarPosicaoNoMapa];
     [self zoomToUserRegion];
+    
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
