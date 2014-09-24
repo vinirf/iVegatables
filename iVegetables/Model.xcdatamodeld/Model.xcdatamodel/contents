@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ReceitaGuardada" representedClassName="ReceitaGuardada" syncable="YES">
+        <attribute name="htmlModoPreparo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img2x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rendimento" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempoCozimento" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempoPreparo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ReceitaGuardada" positionX="-63" positionY="-18" width="128" height="178"/>
+    </elements>
+</model>

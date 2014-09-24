@@ -1,13 +1,13 @@
 //
-//  KitchenViewController.h
+//  Noticia.m
 //  iVegetables
 //
 //  Created by VINICIUS RESENDE FIALHO on 16/04/14.
 //  Copyright (c) 2014 Vinicius Resende Fialho. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Noticia.h"
 
-@interface KitchenViewController : UIViewController
+@implementation Noticia
 
 @end

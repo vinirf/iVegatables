@@ -28,7 +28,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    NSLog(@"string");
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(aparece) userInfo:nil repeats:NO];
+    
+    
+}
+
+-(void)aparece{
+    CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnim.fromValue = [NSNumber numberWithFloat:0.1];
+    fadeAnim.toValue = [NSNumber numberWithFloat:1.0];
+    fadeAnim.duration = 3.0;
+    [self.view.layer addAnimation:fadeAnim forKey:@"opacity"];
+    
+    [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(fadeOut) userInfo:nil repeats:NO];
+
+}
+
+-(void)tiraTelaInicial{
+    self.viewInicial.hidden = YES;
+}
+
+-(void)fadeOut{
+    CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnim.fromValue = [NSNumber numberWithFloat:1.0];
+    fadeAnim.toValue = [NSNumber numberWithFloat:0.0];
+    fadeAnim.duration = 3.0;
+    [self.view.layer addAnimation:fadeAnim forKey:@"opacity"];
+    
+    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(tiraTelaInicial) userInfo:nil repeats:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,8 +84,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+
     if ([segue.identifier isEqualToString:@"embedContainer"]) {
         self.containerViewController = segue.destinationViewController;
+
     }
 }
 

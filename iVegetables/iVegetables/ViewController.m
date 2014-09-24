@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "CoordenadaVegetariano.h"
 #import "DateBaseCoordenadaVegetariano.h"
+#import "AuxCoordenadaVegetariano.h"
+#import "AuxWebNoticia.h"
+
 
 
 #define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
@@ -22,19 +25,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    self.mapVegetables.showsUserLocation = YES;
-    [self.mapVegetables setDelegate:self];
     
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
-        // Add observer
-        [self.mapVegetables.userLocation addObserver:self
-                                    forKeyPath:@"location"
-                                       options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
-                                       context:NULL];
+    [self.mapVegetables setDelegate:self];
+
         
-    }
-   
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
+            self.mapVegetables.showsUserLocation = YES;
+            
+            [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+            
+            UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+            [[self navigationItem] setBackBarButtonItem:backButton];
+            
+            
+        }else{
+            self.mapVegetables.showsUserLocation = YES;
+            
+            [self.mapVegetables.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+            
+            UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+            [[self navigationItem] setBackBarButtonItem:backButton];
+        }
+    
         
 }
 
@@ -47,34 +59,44 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     [self.mapVegetables.userLocation removeObserver:self forKeyPath:@"location" context:NULL];
     self.posUsuario = self.mapVegetables.userLocation.location.coordinate;
-    [self pegarJson];
+    
+    if([AuxWebNoticia sharedManager].estadoRepetirViewRestaurante == YES){
+        [self pegarJson];
+        [AuxWebNoticia sharedManager].estadoRepetirViewRestaurante = NO;
+    }
+    
     [self marcarPosicaoNoMapa];
     [self zoomToUserRegion];
+    
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     [[self mapVegetables] setCenterCoordinate: userLocation.location.coordinate];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    static NSString *annotationViewReuseIdentifier = @"annotationViewReuseIdentifier";
     
-    static NSString *annotationIdentifier = @"annotationIdentifier";
-    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+    MKAnnotationView *annotationView = (MKAnnotationView *)[self.mapVegetables dequeueReusableAnnotationViewWithIdentifier:annotationViewReuseIdentifier];
     
+    if (annotationView == nil)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationViewReuseIdentifier];
+    }
     
-    if (pinView.annotation == mapView.userLocation) {
+    if (annotationView.annotation == self.mapVegetables.userLocation) {
         return nil;
         
     }else{
-        //[pinView setImage:[UIImage imageNamed:@"GreenPin.jpg"]];
+        annotationView.image = [UIImage imageNamed:@"pino.png"];
+        annotationView.annotation = annotation;
     }
     
+    annotationView.canShowCallout = YES;
+    annotationView.selected = YES;
     
-    pinView.canShowCallout = YES;
-    pinView.animatesDrop = YES;
-    pinView.selected = YES;
-    
-    return pinView;
+    return annotationView;
 }
 
 
@@ -94,20 +116,15 @@
     NSString *termoPesquisa = @"vegetariano";
     int qtdPesquisa = 10;
     
-    NSLog(@"string %f",latitude);
-    NSLog(@" sds %f",longitude);
-    
     NSString *thePath = [NSString stringWithFormat:@"%@%f%@%f%@%@%@%d",@"https://api.foursquare.com/v2/venues/explore?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=",latitude,@",",longitude,@"&query=",termoPesquisa,@"&limit=",qtdPesquisa];
-    
-//    NSString *thePath = @"https://api.foursquare.com/v2/venues/explore?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=-23.657196,-46.751254&query=vegetariano&limit=30";
-    
+     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:thePath]];
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     NSError *error;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:returnData options:0 error:&error];
     
-    for(int i=0;i<10;i++){
+    for(int i=0;i<qtdPesquisa;i++){
         
         NSDictionary *title = [[json valueForKeyPath:@"response.groups.items"] objectAtIndex:0];
         NSDictionary *r = [[title valueForKeyPath:@"venue"] objectAtIndex:i];
@@ -130,8 +147,9 @@
         NSString *estadoPreco  =[r valueForKeyPath:@"price.message"];
         NSString *precoValor  =[r valueForKeyPath:@"price.tier"];
         NSString *raking  =[r valueForKeyPath:@"rating"];
+    
         NSString *horarioFunc  =[r valueForKeyPath:@"hours.status"];
-        //NSString *icone  =[r valueForKeyPath:@"hours.status"];
+        NSString *idVenue = [r valueForKey:@"id"];
         
         NSDictionary *tl = [[title valueForKeyPath:@"tips"] objectAtIndex:i];
         NSString *nomeComentario = [[tl valueForKeyPath:@"user.firstName"]objectAtIndex:0];
@@ -161,6 +179,7 @@
         NSString *nomeUsuarioCompleto = [NSString stringWithFormat:@"%@%@%@",nomeComentario,@" ",nome2Comentario];
         coordVeg.nomeUsuario = nomeUsuarioCompleto;
         coordVeg.comentario = comentario;
+        coordVeg.idVenue = idVenue;
         
         CLLocationCoordinate2D localizacao;
         localizacao.latitude = coordVeg.pontoLatitude;
@@ -168,60 +187,33 @@
         coordVeg.coordinate = localizacao;
         coordVeg.title = nome;
         
+        NSString *thePath2 = [NSString stringWithFormat:@"%@%@%@",@"https://api.foursquare.com/v2/venues/",idVenue,@"/photos?oauth_token=GC5DHRXHPZNDP4STCZGUGZLP1QOXNRRZXMBSJSZVJKIRT15Y&v=20140425&limit=2"];
+        NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:thePath2]];
+        NSData *returnData2 = [NSURLConnection sendSynchronousRequest:request2 returningResponse:nil error:nil];
+        NSError *error2;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:returnData2 options:0 error:&error2];
+        NSString *linkImagem;
+                                   
+        for(int i=0;i<1;i++){
+            NSDictionary *title = [[json valueForKeyPath:@"response.photos.items"] objectAtIndex:i];
+            NSString *sufixo = [title valueForKeyPath:@"suffix"];
+            NSString *prefixo = @"https://irs0.4sqi.net/img/general/800x500";
+            linkImagem = [NSString stringWithFormat:@"%@%@",prefixo,sufixo];
+        }
+
+        coordVeg.linkImagem = linkImagem;
         
         [[DateBaseCoordenadaVegetariano sharedManager]AddCoordenada:coordVeg];
-        
-        NSLog(@"V = %@",nome);
-        NSLog(@"V = %@",contato);
-        NSLog(@"V = %@",rua);
-        NSLog(@"V = %@",ruaCoom);
-        NSLog(@"V = %@",latitude);
-        NSLog(@"V = %@",longitude);
-        NSLog(@"V = %@",distancia);
-        NSLog(@"V = %@",cep);
-        NSLog(@"V = %@",SiglaPais);
-        NSLog(@"V = %@",cidade);
-        NSLog(@"V = %@",estado);
-        NSLog(@"V = %@",pais);
-        NSLog(@"V = %@",site);
-        NSLog(@"V = %@",numeroCheck);
-        NSLog(@"V = %@",totalFreq);
-        NSLog(@"V = %@",estadoPreco);
-        NSLog(@"V = %@",precoValor);
-        NSLog(@"V = %@",raking);
-        NSLog(@"V = %@",horarioFunc);
-        NSLog(@"V = %@",nomeComentario);
-        NSLog(@"V = %@",nome2Comentario);
-        NSLog(@"V = %@",comentario);
-        
-        NSLog(@"\n\n");
-
-        
         
         
     }
     
 }
 
--(void)serializaDadosFourSquareLugares{
-    float latitude = self.mapVegetables.userLocation.coordinate.latitude;
-    float longitude = self.mapVegetables.userLocation.coordinate.longitude;
-    NSString *termoPesquisa = @"vegetariano";
-    int qtdPesquisa = 10;
-    
-    NSString *caminhoJson = [NSString stringWithFormat:@"%@%f%@%f%@%@%@%d",@"https://api.foursquare.com/v2/venues/search?client_id=RSIWOOHN24O5YAXMEC2NL2TMDGN24KPHWTYOUHEMN5N3BBTC&client_secret=HC4QI0XA5LFBS3KJIZXYYNVVL3OZNFSW3WZKADCNKTIMKBGR&v=20130815&ll=",latitude,@",",longitude,@"&query=",termoPesquisa,@"&limit=",qtdPesquisa];
-    
-    
-}
-
-
-
 -(void)marcarPosicaoNoMapa{
     
     for(int i=0;i<[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos].count;i++){
-        NSLog(@"string %d",i);
         [[self mapVegetables] addAnnotation: [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos]objectAtIndex:i]];
-
     }
     [[self Placestable]reloadData];
 
@@ -242,19 +234,6 @@
 
 //Preeche a tabela de rotas
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-//    if(!cell){
-//        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"UITableViewCell"];
-//    }
-//    
-//    CoordenadaVegetariano *p = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
-//    [[cell textLabel] setFont:[UIFont systemFontOfSize:20.0]];
-//    NSString *conc = [NSString stringWithFormat:@"%@,%@", [p nomeLugar], [p rua]];
-//    [[cell textLabel]setText:conc];
-//    //cell.imageView.image = [UIImage imageNamed:@"routes.png"];
-//    
-//    return cell;
     
     NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -268,7 +247,39 @@
      CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager]listaCoordenadasVegetarianos] objectAtIndex:[indexPath row]];
     
     UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-    recipeImageView.image = [UIImage imageNamed:@"routes.png"];
+    recipeImageView.image = [UIImage imageNamed:@"pino.png"];
+    
+    //Notas
+    UIImageView *alface1 = (UIImageView *)[cell viewWithTag: 1];
+    UIImageView *alface2 = (UIImageView *)[cell viewWithTag: 2];
+    UIImageView *alface3 = (UIImageView *)[cell viewWithTag: 3];
+    UIImageView *alface4 = (UIImageView *)[cell viewWithTag: 4];
+    
+    switch ([recipe.qtEstadoPreco integerValue]) {
+        case 1:
+            alface1.alpha = 1;
+            break;
+        case 2:
+            alface1.alpha = 1;
+            alface2.alpha = 1;
+            break;
+        case 3:
+            alface1.alpha = 1;
+            alface2.alpha = 1;
+            alface3.alpha = 1;
+            break;
+        case 4:
+            alface1.alpha = 1;
+            alface2.alpha = 1;
+            alface3.alpha = 1;
+            alface4.alpha = 1;
+            break;
+            
+        default:
+            break;
+    }
+    
+    
     
     UILabel *recipeNameLabel = (UILabel *)[cell viewWithTag:101];
     recipeNameLabel.text = recipe.nomeLugar;
@@ -277,17 +288,41 @@
     recipeRuaLabel.text = recipe.rua;
     
     UILabel *recipeTelefoneLabel = (UILabel *)[cell viewWithTag:103];
-    recipeTelefoneLabel.text = recipe.telefone;
+    if(recipe.telefone == NULL) recipeTelefoneLabel.text = @"Sem Telefone";
+    else recipeTelefoneLabel.text = recipe.telefone;
+    
+    UILabel *recipeNotaLabel = (UILabel *)[cell viewWithTag:106];
+    if([recipe.nota doubleValue] == 0){
+        recipeNotaLabel.text = @"-";
+    }else{
+        NSString *not = [NSString stringWithFormat:@"%.1f", [recipe.nota doubleValue]];
+        recipeNotaLabel.text = not;
+    }
+    
+    UILabel *recipeEstadoPrecoLabel = (UILabel *)[cell viewWithTag:104];
+    NSString *estadoPreco = [NSString stringWithFormat:@"%@%@",@"Preco: ",recipe.estadoPreco];
+    recipeEstadoPrecoLabel.text = estadoPreco;
+    
+    UILabel *recipeDistanciaLabel = (UILabel *)[cell viewWithTag:105];
+    NSString *distancia = [NSString stringWithFormat:@"Distância até esse local é de %0.2f Km", [recipe.distancia floatValue]/1000];
+    recipeDistanciaLabel.text = distancia;
     
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CoordenadaVegetariano *recipe = [[[DateBaseCoordenadaVegetariano sharedManager] listaCoordenadasVegetarianos] objectAtIndex: [indexPath row]];
+    [AuxCoordenadaVegetariano sharedManager].coordenada = recipe;
+
+}
+
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [NSString stringWithFormat:@"Lugares "];
+    return [NSString stringWithFormat:@"Restaurantes próximos à você"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 130.0;
+    return 180;
 }
 
 @end
